@@ -1,0 +1,19 @@
+ZIVO zivo60.96.19 - گزارش اصلاح ادمین/ویژه
+
+مشکل زنده پیدا شده:
+1) فرمان ادمین/ویژه بعد از پیدا کردن کاربر از روی ریپلای، دوباره GetParticipant می‌زد. در برخی گروه‌های سروش این RPC با NOT_SUPPORTED رد می‌شود.
+2) بازیابی مقام فرستنده فقط Direct Participant را بررسی می‌کرد و در صورت NOT_SUPPORTED از Admin List سالم استفاده نمی‌کرد.
+
+اصلاح:
+- ریپلای روی پیام همان گروه، اثبات هدف همان گروه محسوب می‌شود و RPC تکراری حذف شد.
+- تشخیص مقام فرستنده Direct Participant -> Native Admin List fallback دارد.
+- Creator واقعی به مالک زیوو و Native Admin واقعی به ادمین زیوو بازیابی می‌شود.
+- هدف عددی/username همچنان Strict Membership دارد.
+- Login اکانت‌های دوم و سوم Retry محدود و timeout عددی دارد.
+
+تست‌ها:
+- Command Core: PASS
+- Moderation: PASS
+- Installer Transaction: PASS
+- 96.12 تا 96.18 regression: PASS
+- 96.19 static + dynamic actor/reply tests: PASS

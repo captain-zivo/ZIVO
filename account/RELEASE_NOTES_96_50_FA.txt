@@ -1,0 +1,6 @@
+ZIVO 60.96.50
+- رفع Timeout پاکسازی 2000/5000 با دریافت تاریخچه صفحه‌ای حداکثر 100 پیام
+- Pace جدا برای Cleanup با حفظ FloodWait/Timeout circuit و اولویت Moderation زنده
+- کاهش زمان انتظار Batch پاکسازی و Retry فقط روی پیام‌های باقی‌مانده
+- IPC جدید control_enqueue/control_status برای عملیات طولانی Official
+- حفظ کامل Receipt Ledger، Meow Commerce، Premium tiers، Welcome/Speaker و Campaign

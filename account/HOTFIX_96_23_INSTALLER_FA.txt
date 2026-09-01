@@ -1,0 +1,4 @@
+ZIVO zivo60.96.23 installer hotfix
+- Added check_zivo60_96_23_private_inventory_priority.py to DEPLOY_FILES.
+- Corrected backup/stage venv labels from 96_22 to 96_23.
+- Prevents post-cutover installed-copy test failure and rollback caused by missing 96.23 checker.

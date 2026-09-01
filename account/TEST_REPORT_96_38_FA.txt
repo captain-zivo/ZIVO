@@ -1,0 +1,27 @@
+ZIVO zivo60.96.38 — Test Report
+
+Foundation test:
+- FREE/SILVER/GOLD/DIAMOND subscription engine + RAM cache: PASS
+- IRR plan pricing: PASS
+- Card-to-card receipt + Telegram approval/reject: PASS
+- Zibal request/start/callback/verify + amount match: PASS
+- Telegram admin card/merchant/domain/callback/price controls: PASS
+- Payment domain -> automatic callback + HTTPS reverse-proxy helper: PASS
+- Rial wallet + atomic subscription payment: PASS
+- Meow admin subtraction foundation: PASS
+
+Critical regression tests after final payment-domain patch:
+- Installer transaction: PASS
+- 96.37 Forward/Welcome Fast Lane: PASS
+- 96.36 Welcome End-to-End: PASS
+- 96.35 Owner Multi-group Recovery: PASS
+- 96.34 Cleanup Reliability: PASS
+- 96.33 Profanity Guard: PASS
+- 96.31 Transport Reliability: PASS
+- Python syntax: PASS
+- Installer bash syntax: PASS
+- Payment-domain helper bash syntax: PASS
+
+Important:
+- 96.38 is foundation-only. Existing features are not newly paywalled in this release.
+- Zibal live Request/Verify requires a real merchant and public HTTPS domain, so the live bank transaction is intentionally not claimed as verified offline.

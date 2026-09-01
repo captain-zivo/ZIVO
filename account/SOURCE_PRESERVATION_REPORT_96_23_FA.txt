@@ -1,0 +1,3 @@
+ZIVO 96.23 از Full Source نسخه 96.22 ساخته شده است.
+هیچ قابلیت قبلی برای ساخت این Hotfix حذف نشده است.
+تغییرات فقط روی Full Dialog Inventory scheduling و Private 404 retry pressure اعمال شده‌اند.

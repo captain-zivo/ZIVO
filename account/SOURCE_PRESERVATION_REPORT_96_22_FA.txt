@@ -1,0 +1,10 @@
+ZIVO zivo60.96.22 SOURCE PRESERVATION
+
+Baseline: ZIVO_zivo60_96_21_FULL_SOURCE_10MB_PLUS.zip
+Result before adding 96.22 reports:
+- Baseline files (excluding SHA256SUMS): 191
+- 96.22 files: 193
+- Missing baseline files: 0
+- New implementation files: check_zivo60_96_22_full_dialog_inventory.py (+ generated pyc)
+
+96.22 was built from the full 96.21 source tree. No baseline source file was intentionally removed.

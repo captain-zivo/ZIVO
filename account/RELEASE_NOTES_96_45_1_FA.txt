@@ -1,0 +1,6 @@
+ZIVO 96.45.1 Installer Hotfix
+- Runtime/Core remains zivo60.96.45.
+- Official UI remains zivo-official13.
+- Restored the installed-copy profanity regression execution required by the historical 96.39.1 full-core audit.
+- Both staged and installed-copy profanity checks use ZIVO_PROFANITY_TEST_MAX_SECONDS=20.
+- Prevents transactional installer rollback at check_zivo60_96_39_1_full_core_audit.py.

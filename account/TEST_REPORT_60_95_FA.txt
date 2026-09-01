@@ -1,0 +1,53 @@
+ZIVO 60.95.1 — گزارش اعتبارسنجی هاتفیکس Cache فیلتر
+
+نتیجه اصلاح اضطراری: PASS
+
+- با Cache واقعی قدیمی «(phrase_norm, phrase_display)»، تابع مصرف‌کننده Cache آن را به سه‌فیلدی تبدیل می‌کند: PASS
+- خود Matcher با همان Cache قدیمی اجرا شد و «ValueError: expected 3, got 2» رخ نداد: PASS
+- Cache خراب به جای قطع Router از SQLite بازسازی می‌شود: PASS
+- ZIP جدید بدون __pycache__ ساخته می‌شود تا Extract در دیسک کم‌فضا نیمه‌کاره نماند؛ تمام فایل‌های سورس داخل بسته باقی می‌مانند.
+
+ZIVO 60.95 — گزارش اعتبارسنجی
+
+نتیجه نهایی: PASS
+
+- Parse و PyCompile همه ماژول‌های اجرایی: PASS
+- تست اختصاصی check_zivo60_95_social_games.py: PASS
+- دریافت میو و محدودیت 5 دقیقه: PASS
+- انتقال با شرط استارت، مالیات 2 درصد، تراکنش اتمیک و اعلان: PASS
+- بازی میو 20+20 و جایزه دقیق 36: PASS
+- دوز، نوبت، جلوگیری از دخالت نفر سوم، برد و آزادشدن میز قدیمی: PASS
+- شیپ از کاربران فعال و عدم تکرار زوج قبلی: PASS
+- فاصله جاده‌ای و زمان رانندگی: PASS
+- 30 نژاد پت، غذا و مرگ 24 ساعته: PASS
+- خرید، آگهی و انتقال اتمیک مالکیت خانه: PASS
+- تشخیص رویدادهای جدید سخنگوی معمولی و جلوگیری از پاسخ تکراری: PASS
+- Markerهای زمینه/احساس/راهکار در سخنگوی AI: PASS
+
+تست‌های رگرسیون نسخه‌های قبلی:
+- check_command_core_91.py: PASS
+- check_filter_rate_91.py: PASS
+- check_help_permission_91.py: PASS
+- check_historical_join_recovery_91.py: PASS
+- check_moderation_security_91.py: PASS
+- check_private_fast_lane_91.py: PASS
+- check_private_join_priority_91.py: PASS
+- check_private_join_recovery_91.py: PASS
+- check_private_notice_91.py: PASS
+- check_runtime_log_hygiene_91.py: PASS
+- check_smart_filter_speed_93.py: PASS
+- check_speed_filter_font_ban_91.py: PASS
+- check_target_campaign_report_91.py: PASS
+- check_transport_hygiene_91.py: PASS
+- check_welcome_hotfix_91.py: PASS
+- check_zivo60_94_features.py: PASS
+- verify_zivo60_91.py: PASS
+
+محافظ سورس:
+- تمام 33 فایل غیر-Cache موجود در ZIP اولیه 60.93 همچنان در بسته هستند؛ تعداد فایل حذف‌شده: صفر.
+- قفل متن‌های فارسی zivo60.py عمداً فقط برای UI قابلیت‌های جدید به 3951 رشته با Hash دقیق ارتقا یافت.
+- نصب‌گر قبل از جایگزینی همه تست‌ها را اجرا می‌کند، از نسخه جاری بکاپ می‌گیرد، بعد از اجرا Markerهای اصلی را می‌سنجد و در شکست Rollback می‌کند.
+
+نکته Runtime:
+- کتابخانه SPlusthon داخل محیط ویندوز توسعه نصب نبود؛ به همین دلیل اتصال زنده به حساب پیام‌رسان در این سیستم اجرا نشد.
+- نصب‌گر روی سرور requirements.txt را داخل venv نصب می‌کند و شروع واقعی سرویس را تا مشاهده Marker «ZIVO is ready» کنترل می‌کند.

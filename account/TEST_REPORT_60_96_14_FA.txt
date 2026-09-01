@@ -1,0 +1,54 @@
+ZIVO zivo60.96.14 - TEST REPORT
+
+Current fixes verified locally:
+1) Recognized group command routing occurs before message-rate/forward/anti-spam/flood guards.
+2) Explicit install/pending recovery routing occurs before generic guards.
+3) 96.13 high-volume shared identity observation writes were removed from the hot path.
+4) Shared identity read failure falls back to per-account local profile instead of breaking the command.
+5) Startup no longer bulk-copies all per-account profiles into the shared DB.
+6) One-time DB safety reset disables old bot-message cleanup, tag cleanup and scheduled cleanup, and clears queued auto-delete jobs.
+7) Manual cleanup/full cleanup and explicit automation configuration remain present.
+8) Origin staged flow including «ندارم», restart persistence and cross-account shared manual fields remains covered by 96.13 regression tests.
+9) Installed-group inactivity auto-leave remains disabled by default.
+10) Old-group ChatSendPlainForbidden formatted fallback remains present.
+
+Executed tests after final patch:
+- verify_zivo60_91.py: PASS
+- check_command_core_91.py: PASS
+- check_filter_rate_91.py: PASS (updated routing contract for 96.14)
+- check_delete_governor_96.py: PASS
+- check_help_permission_91.py: PASS
+- check_historical_join_recovery_91.py: PASS
+- check_join_guide_ttt_96_10.py: PASS
+- check_join_recovery_69.py: executed; no configured accounts in local test DB
+- check_moderation_security_91.py: PASS
+- check_priority_transport_96.py: PASS
+- check_private_fast_lane_91.py: PASS
+- check_private_join_priority_91.py: PASS
+- check_private_join_recovery_91.py: PASS
+- check_private_notice_91.py: PASS
+- check_runtime_log_hygiene_91.py: PASS
+- check_smart_filter_speed_93.py: PASS
+- check_speed_filter_font_ban_91.py: PASS
+- check_speed_hotpath_96.py: PASS
+- check_target_campaign_report_91.py: PASS
+- check_transport_hygiene_91.py: PASS
+- check_welcome_hotfix_91.py: PASS
+- check_zivo60_94_features.py: PASS
+- check_zivo60_95_social_games.py: PASS
+- check_zivo60_96_11_features.py: PASS
+- check_zivo60_96_12_repairs.py: PASS
+- check_zivo60_96_13_live_regressions.py: PASS
+- check_zivo60_96_14_emergency_recovery.py: PASS
+- check_zivo_market_provider.py: PASS
+- check_zivo_market_concurrency.py: PASS
+- check_zivo_market_tools.py: PASS
+- check_zivo_voice_profiles.py: PASS
+- check_installer_transaction_96_11.py install_zivo60.sh: PASS
+- bash -n install_zivo60.sh: PASS
+- Python top-level py_compile: 44 files PASS
+
+Live-only remaining verification:
+- Actual Soroush inbound command latency on main/acc2/acc3 after cutover.
+- Confirmation that legacy queued deletion stops after the one-time migration on all three real DBs.
+- Groups already left by older releases still require actual rejoin; code cannot restore platform membership without a valid group link.

@@ -1,0 +1,15 @@
+دستور نصب فایل کامل ZIVO 60.96.11
+
+فایل مورد انتظار داخل /root:
+ZIVO_zivo60_96_11_ACTIVE_MARKET_VOICE_ADMIN_FULL_SOURCE_6MB.zip
+
+بررسی فایل، سلامت ZIP و فضای آزاد:
+ls -lh /root/ZIVO_zivo60_96_11_ACTIVE_MARKET_VOICE_ADMIN_FULL_SOURCE_6MB.zip; unzip -tq /root/ZIVO_zivo60_96_11_ACTIVE_MARKET_VOICE_ADMIN_FULL_SOURCE_6MB.zip; df -h /
+
+نصب و اجرای کامل:
+ZIP=/root/ZIVO_zivo60_96_11_ACTIVE_MARKET_VOICE_ADMIN_FULL_SOURCE_6MB.zip; DIR=/root/ZIVO_zivo60_96_11_full; test -f "$ZIP" && unzip -tq "$ZIP" && [ "$(df -Pm / | awk 'NR==2 {print $4}')" -ge 512 ] && rm -rf -- "$DIR" && mkdir -p "$DIR" && unzip -o "$ZIP" -d "$DIR" && chmod +x "$DIR/install_zivo60.sh" && bash "$DIR/install_zivo60.sh"
+
+بررسی بعد از نصب:
+systemctl is-active zivo60.service; journalctl -u zivo60.service -n 120 --no-pager -l
+
+بسته کامل شامل سورس، تست‌ها، راهنماها و فایل‌های همراه است. نصب‌گر ماژول‌های کارت بازار، مدیریت آسان و پروفایل ویس را هم compile می‌کند و هفت تست تازهٔ بازار، هم‌زمانی، محاسبه، ویس، فعال‌سازی، یکپارچگی و تراکنش نصب را قبل از Deploy اجرا می‌کند.

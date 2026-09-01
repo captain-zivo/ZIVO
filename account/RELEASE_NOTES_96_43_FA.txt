@@ -1,0 +1,7 @@
+ZIVO 60.96.43
+- حذف SQLite از مسیر runtime بات رسمی به اکانت‌ها.
+- Unix Socket مستقیم برای main/acc2/acc3.
+- Join و کنترل مستقیم بدون Poll/Notifier.
+- Full dialog/private inventory در حالت Official-only غیرفعال برای کاهش فشار Transport.
+- خطای CHAT_WRITE_FORBIDDEN_BACKOFF به عنوان وضعیت قابل انتظار هندل می‌شود.
+- تمام اصلاحات فیلتر محتوا 100 پیام و Bio Guard نسخه 96.42 حفظ شده‌اند.

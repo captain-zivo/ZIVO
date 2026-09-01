@@ -1,0 +1,9 @@
+ZIVO 96.45.4 - Low Disk Venv Reuse Installer Hotfix
+
+- Runtime remains zivo60.96.45 and Official remains zivo-official13.
+- Fixes installation on low-disk hosts where the previous installer still created a full duplicate venv after passing the 192MB guard.
+- Validates the existing live venv against exact release requirements and reuses it without mutation when compatible.
+- In reuse mode /opt/zivo60/venv is not moved or replaced, reducing disk usage and rollback cost.
+- If dependencies are incompatible, the conservative 512MB replacement-venv guard is enforced before cutover.
+- Official13 reuses a compatible prior Official/account venv for requests and only creates a new small venv as fallback.
+- Historical 96.39.1/2/3/4 installer contracts remain intact.

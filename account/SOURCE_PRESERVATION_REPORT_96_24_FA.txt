@@ -1,0 +1,13 @@
+ZIVO 60.96.24 SOURCE PRESERVATION
+
+Baseline: 60.96.23 Installer Fix V2 full source.
+No runtime module was removed.
+Changed runtime: zivo60.py
+Changed installer: install_zivo60.sh
+Forward-compatible regression checks updated: 96.18, 96.22, 96.23
+Added:
+- check_zivo60_96_24_cleanup_private_inventory.py
+- RELEASE_NOTES_96_24_FA.txt
+- TEST_REPORT_60_96_24_FA.txt
+- SOURCE_PRESERVATION_REPORT_96_24_FA.txt
+All prior feature modules, sessions/database migration logic and multi-account services remain present.

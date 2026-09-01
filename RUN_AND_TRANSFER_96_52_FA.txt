@@ -1,0 +1,27 @@
+ZIVO 96.52 + OFFICIAL21 — انتقال، نصب و اجرا
+
+1) انتقال ZIP از PowerShell ویندوز:
+scp "$env:USERPROFILE\Downloads\ZIVO_96_52_OFFICIAL21_WALLET_COMMERCE_FULL_SOURCE.zip" root@176.65.151.226:/root/
+
+2) ورود به سرور:
+ssh root@176.65.151.226
+
+3) نصب/آپدیت تراکنشی:
+mkdir -p /opt/zivo-release-96-52
+unzip -o /root/ZIVO_96_52_OFFICIAL21_WALLET_COMMERCE_FULL_SOURCE.zip -d /opt/zivo-release-96-52
+cd /opt/zivo-release-96-52/ZIVO_96_52_OFFICIAL21_WALLET_COMMERCE_FULL_SOURCE
+python3 verify_release.py
+python3 verify_low_disk_installer.py
+python3 verify_official_preflight_runtime.py
+bash install_all.sh
+
+4) فعال‌سازی محیط مجازی:
+source /opt/zivo60/venv/bin/activate
+
+5) ری‌استارت سرویس‌ها:
+systemctl restart zivo60.service zivo60@acc2.service zivo60@acc3.service zivo-official21.service
+
+6) وضعیت و لاگ:
+systemctl status zivo60.service zivo60@acc2.service zivo60@acc3.service zivo-official21.service --no-pager -l
+journalctl -u zivo60.service -u zivo60@acc2.service -u zivo60@acc3.service -u zivo-official21.service -n 250 --no-pager
+journalctl -u zivo60.service -u zivo60@acc2.service -u zivo60@acc3.service -u zivo-official21.service -f

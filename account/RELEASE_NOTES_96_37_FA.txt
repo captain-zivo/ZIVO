@@ -1,0 +1,20 @@
+ZIVO zivo60.96.37 — Forward + Welcome Live Fastlane
+====================================================
+
+علت‌های واقعی از لاگ سرور:
+1) 96.36 اصلاً Deploy نشده بود؛ benchmark زمان اجرای فیلتر فحش 4.198s روی سقف 4.0s شکست خورد و Installer Rollback کرد.
+2) Forward داخل صف عمومی group_event_queue وارد می‌شد؛ تحت بار بالا تشخیص/حذف می‌توانست عقب بیفتد.
+3) تمام DeleteMessagesها یک lane سریال دارند؛ cleanupهای پس‌زمینه می‌توانستند قبل از Forward در صف Delete قرار بگیرند.
+4) Joinهای خوشامد باید هم در NewMessage و هم Raw، با اولویت و مستقل از صف chatter پردازش شوند.
+
+تغییرات 96.37:
+- locked Forward قبل از FIFO عمومی به forward priority router می‌رود.
+- Delete همچنان سریال و FloodWait-safe است، ولی live/lock waiter بر cleanupهای queued اولویت دارد.
+- Verify + durable retry قبلی Forward حفظ شده است.
+- Join service event در NewMessage eager priority می‌شود؛ Raw welcome rescue هم eager شده است.
+- کل Welcome recovery نسخه 96.36 حفظ شده: direct raw, wrapper, private/public, cross-account config reconciliation, test welcome.
+- benchmark فحش 396تایی همچنان اجرا می‌شود، اما سقف server-noise از 4.0s به 6.0s قابل تنظیم با ZIVO_PROFANITY_TEST_MAX_SECONDS شده تا 0.2s نوسان کل Deploy را Rollback نکند.
+
+Live-only:
+- زمان واقعی حذف Forward و دریافت Join event بعد از Deploy باید با journal تأیید شود.
+- گروه فاقد Write/Delete permission همچنان از API سروش قابل اجبار نیست.

@@ -1,0 +1,5 @@
+ZIVO 60.96.17 CLEAN INSTALL FIX V2
+- check_zivo60_96_17_send_flood_recovery.py now accepts ZIVO_INSTALLER_UNDER_TEST.
+- predeploy and installed-copy validation explicitly use the release installer path.
+- fixes FileNotFoundError for /opt/zivo60/install_zivo60.sh on fresh WSL/Linux installs.
+- runtime behavior/version remains zivo60.96.17.

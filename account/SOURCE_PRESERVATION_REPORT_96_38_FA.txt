@@ -1,0 +1,21 @@
+ZIVO zivo60.96.38 — Full Source Preservation
+
+Baseline: ZIVO zivo60.96.37 Full Source
+Baseline files: 265
+No baseline file is removed in 96.38.
+
+Changed baseline files:
+- zivo60.py
+- zivo_social_games.py
+- install_zivo60.sh
+- README_ZIVO60_FA.txt
+- BUILD_INFO.txt
+
+New files:
+- zivo_premium.py
+- check_zivo60_96_38_premium_payment_foundation.py
+- setup_zivo_payment_domain.sh
+- RELEASE_NOTES_96_38_FA.txt
+- TEST_REPORT_96_38_FA.txt
+- SOURCE_PRESERVATION_REPORT_96_38_FA.txt
+- SHA256SUMS.txt is regenerated for the final package.

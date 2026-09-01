@@ -1,0 +1,7 @@
+ZIVO 96.45.2 Installer Contract Hotfix
+- Runtime/Core remains zivo60.96.45.
+- Official UI remains zivo-official13.
+- Restores the complete historical 96.39.3 startup/cutover installer contract: deploy inventory + precompile + predeploy execution + post-copy execution.
+- Restores the complete historical 96.39.4 premium schema migration installer contract with the same four real references.
+- Keeps the 96.45.1 staged + installed-copy profanity benchmark contract intact.
+- Prevents transactional rollback at check_zivo60_96_39_3_startup_cutover.py and the immediately-following 96.39.4 schema check.

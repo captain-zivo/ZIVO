@@ -1,0 +1,12 @@
+ZIVO 60.94.1 - گزارش اعتبارسنجی نهایی
+
+نتیجه نهایی: PASS
+
+- Python compile: همه فایل‌های اجرایی اصلی PASS
+- check_zivo60_94_features.py: ریپلای مستقیم همه مسیرهای گروه/فایل، بازتولید و ترمیم Cache دو‌فیلدی لاگ سرور، سخنگو، پاکسازی زمان‌دار، PRO/مالک کل، ادمین گروه بسته، GIF ویژه، انتخاب همه اکانت‌ها و پاکسازی هماهنگ بنر PASS
+- check_command_core_91.py: هسته فرمان و بازیابی فرمان PASS
+- check_smart_filter_speed_93.py: فیلتر هوشمند و مسیر سریع گروه PASS
+- تمام تست‌های رگرسیون پیوی، Join، Welcome، Transport، Moderation، Campaign، Report، Help، Font، Ban و Runtime Log PASS
+- تعداد بررسی‌های دور کامل: 19
+
+نکته محیط تست: check_join_recovery_69.py با مسیر SQLite موقت اجرا شد؛ روی سرور به‌صورت پیش‌فرض /opt/zivo60/zivo_multi_accounts.db را بررسی می‌کند.

@@ -1,0 +1,9 @@
+ZIVO zivo60.96.23 — Private Priority / Throttled Full Inventory
+
+- اسکن کامل همه Dialogها و گروه‌ها بدون سقف حفظ شد.
+- main/acc2/acc3 دیگر همزمان Full Inventory اجرا نمی‌کنند؛ قفل بین‌پردازه‌ای فقط یک Scanner را فعال نگه می‌دارد.
+- بعد از هر صفحه تقریبی 100 Dialog، اسکن عمداً شبکه را آزاد می‌کند.
+- هنگام ورود پیوی/فرمان یا بالا رفتن pending transport، اسکن تا آرام‌شدن مسیر foreground مکث می‌کند.
+- Startup scan با فاصله بیشتر برای main/acc2/acc3 شروع می‌شود تا Warm-up پیوی و فرمان مختل نشود.
+- اگر ارسال پیوی پس از Fresh-Peer retry دوباره RPC 404 NOT_FOUND بدهد، آن target برای 5 دقیقه cooldown می‌گیرد تا RPCهای تکراری مصرف نشوند.
+- قابلیت Full Network Scan، Coordination PV، اقتصاد/هدیه، پاکسازی مالک، Admin/Special Recovery و BASIC/FULL نسخه‌های قبل حفظ شده‌اند.

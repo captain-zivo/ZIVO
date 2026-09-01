@@ -1,0 +1,10 @@
+rm -rf /root/zivo60_96_28
+mkdir -p /root/zivo60_96_28
+unzip -o /root/ZIVO_zivo60_96_28_FULL_SOURCE_10MB_PLUS_QUEUE_FAIRNESS_ALL_GROUPS.zip -d /root/zivo60_96_28
+cd /root/zivo60_96_28
+sha256sum -c SHA256SUMS.txt
+chmod +x install_zivo60.sh
+bash install_zivo60.sh
+systemctl restart zivo60.service
+systemctl restart zivo60@acc2.service
+systemctl restart zivo60@acc3.service

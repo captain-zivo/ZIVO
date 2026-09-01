@@ -1,0 +1,2 @@
+SOURCE PRESERVATION 96.28
+96.28 continues from 96.27 full source. Existing cleanup, all-private inventory, multi-account sessions, campaign live progress, fast send lane and raw exhaustive folder0/archive1 pagination are preserved. Changes are limited to standard campaign queue supersession, newest queued-job priority, immediate worker claim, and bounded campaign fairness.

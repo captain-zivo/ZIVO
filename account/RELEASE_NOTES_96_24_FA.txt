@@ -1,0 +1,19 @@
+ZIVO zivo60.96.24
+
+اصلاحات اصلی:
+1) بازیابی پاکسازی عددی و پاکسازی کل گپ:
+   - حذف وابستگی فرمان پاکسازی به native-admin probe غیرقابل‌اعتماد.
+   - مجوز واقعی حذف توسط Delete RPC سروش تعیین می‌شود.
+   - منطق مالک بدون PRO حفظ شده و ادمین برای Full Cleanup همچنان طبق entitlement عمل می‌کند.
+2) Full Cleanup:
+   - پیام‌هایی که همان لحظه از History دریافت شده و پین نیستند دوباره Resolve نمی‌شوند.
+   - خطاهای NOT_FOUND/NOT_SUPPORTED ناشی از resolve تکراری حذف شده‌اند.
+   - پین‌ها همچنان قبل از Delete از لیست خارج می‌شوند.
+3) Full Dialog Inventory:
+   - همه User dialogهای واقعی هر اکانت ثبت می‌شوند، نه فقط private_contacts قدیمی/هماهنگی.
+   - Bot و deleted account از مقصدهای پیوی حذف می‌شوند.
+   - پیوی‌های هماهنگی همچنان با source=coordination مشخص می‌شوند.
+   - اسکن بدون سقف و Low Priority نسخه 96.23 حفظ شده است.
+4) Installer:
+   - تست 96.24 در DEPLOY_FILES، کپی واقعی، py_compile و Installed-Copy قرار دارد.
+   - ZIVO_FULL_DIALOG_INVENTORY_REGISTER_ALL_PRIVATE=1 برای همه اکانت‌ها Persist می‌شود.

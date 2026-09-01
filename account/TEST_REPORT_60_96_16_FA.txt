@@ -1,0 +1,21 @@
+ZIVO zivo60.96.16 - TEST REPORT
+
+نتیجه: PASS
+
+اصلاحات کلیدی:
+- Batch shared group claim startup seed
+- Legacy stale local-state reconcile
+- Safe owner=0 live placeholder when only shared history survives
+- Command-route diagnostic logging
+- Cleanup automation remains excluded from legacy recovery
+
+تست‌های اصلی:
+- verify_zivo60_91.py: PASS (3992 literals)
+- check_zivo60_96_12_repairs.py: PASS
+- check_zivo60_96_13_live_regressions.py: PASS
+- check_zivo60_96_14_emergency_recovery.py: PASS
+- check_zivo60_96_15_legacy_group_recovery.py: PASS
+- check_zivo60_96_16_legacy_runtime_reconcile.py: PASS
+- check_installer_transaction_96_11.py: PASS
+- Command/Transport/Filter/Private/Moderation/Market/Voice regression checks: PASS
+- check_delete_governor_96.py: PASS when rerun separately after aggregate shell timeout

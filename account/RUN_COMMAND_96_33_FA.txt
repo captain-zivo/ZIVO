@@ -1,0 +1,21 @@
+PowerShell:
+scp "C:\Users\hadif\Downloads\ZIVO_zivo60_96_33_FULL_SOURCE_10MB_PROFANITY_GUARD_EXPANSION.zip" root@176.65.151.226:/root/
+ssh root@176.65.151.226
+
+Server:
+rm -rf /root/zivo60_96_33
+mkdir -p /root/zivo60_96_33
+unzip -o /root/ZIVO_zivo60_96_33_FULL_SOURCE_10MB_PROFANITY_GUARD_EXPANSION.zip -d /root/zivo60_96_33
+cd /root/zivo60_96_33
+sha256sum -c SHA256SUMS.txt
+chmod +x install_zivo60.sh
+./install_zivo60.sh
+cd /opt/zivo60
+source /opt/zivo60/venv/bin/activate
+python /opt/zivo60/check_zivo60_96_33_profanity_guard_expansion.py
+systemctl daemon-reload
+systemctl restart zivo60.service
+systemctl restart zivo60@acc2.service
+systemctl restart zivo60@acc3.service
+systemctl status zivo60.service zivo60@acc2.service zivo60@acc3.service --no-pager -l
+journalctl -u zivo60.service -u zivo60@acc2.service -u zivo60@acc3.service -f

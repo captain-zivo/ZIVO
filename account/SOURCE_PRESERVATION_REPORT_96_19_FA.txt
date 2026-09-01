@@ -1,0 +1,8 @@
+ZIVO zivo60.96.19 FULL SOURCE PRESERVATION
+
+- نسخه 96.18 به‌عنوان baseline کامل حفظ شده است.
+- هیچ فایل سورس/مستند تاریخی عمداً حذف نشده است.
+- فایل جدید check_zivo60_96_19_role_command_recovery.py اضافه شده است.
+- TEST_REPORT_60_96_19_FA.txt و این گزارش اضافه شده‌اند.
+- تعداد فایل‌ها قبل از SHA manifest: 182
+- مجموع بایت‌ها قبل از SHA manifest: 10543738

@@ -1,0 +1,13 @@
+ZIVO zivo60.96.39.2 — FULL INVENTORY DEPLOY HOTFIX
+
+علت Rollback نسخه 96.39.1:
+- Full Source شامل 59 فایل check*.py بود، اما DEPLOY_FILES فقط 38 تست را به /opt/zivo60 منتقل می‌کرد.
+- Full Core Audit روی Installed Copy به عدد ثابت 59 وابسته بود و پس از Cutover شکست می‌خورد.
+
+اصلاحات 96.39.2:
+- تمام تست‌های موجود Full Source در DEPLOY_FILES قرار می‌گیرند و واقعاً به /opt/zivo60 منتقل می‌شوند.
+- شمارش ثابت تست حذف شد؛ Full Source، DEPLOY_FILES و Installed Copy باید inventory یکسان داشته باشند.
+- تست اختصاصی Installed QA Inventory اضافه شد.
+- تست‌های قدیمی دارای thread/background worker کورکورانه در حلقه اجرا نمی‌شوند؛ invocationهای کنترل‌شده قبلی حفظ شده‌اند تا Installer hang نکند.
+- منطق Cleanup/Word Filter/Spam Fast Lane نسخه 96.39.1 حفظ شده است.
+- Premium Purchase UX و Payment Foundation نسخه 96.39 حفظ شده‌اند.

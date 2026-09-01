@@ -1,0 +1,5 @@
+ZIVO 60.96.27 SOURCE PRESERVATION
+
+Baseline: zivo60.96.26 Full Source.
+Runtime features retained; only dialog enumeration path is upgraded to explicit raw pagination for Full Inventory and Campaign Live Scan.
+No account session, database schema, cleanup logic, economy, games, permissions, join routing, Telegram panel progress, or campaign send pacing was removed.

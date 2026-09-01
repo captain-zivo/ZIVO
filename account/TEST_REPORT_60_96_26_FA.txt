@@ -1,0 +1,31 @@
+TEST REPORT ZIVO60.96.26
+
+PASS:
+- py_compile: zivo60.py / zivo_multi_account.py / check_zivo60_96_26_campaign_live_progress_speed.py
+- check_zivo60_96_17_send_flood_recovery.py
+- check_zivo60_96_18_runtime_presence.py
+- check_zivo60_96_19_role_command_recovery.py
+- check_zivo60_96_20_admin_economy_gifts.py
+- check_zivo60_96_21_owner_full_cleanup.py
+- check_zivo60_96_22_full_dialog_inventory.py
+- check_zivo60_96_23_private_inventory_priority.py
+- check_zivo60_96_24_cleanup_private_inventory.py
+- check_zivo60_96_25_campaign_live_all_dialogs.py
+- check_zivo60_96_26_campaign_live_progress_speed.py
+- check_zivo60_96_12_repairs.py
+- check_zivo60_96_13_live_regressions.py
+- check_zivo60_96_14_emergency_recovery.py
+- check_zivo60_96_15_legacy_group_recovery.py
+- check_zivo60_96_16_legacy_runtime_reconcile.py
+- verify_zivo60_91.py
+- check_command_core_91.py
+- check_transport_hygiene_91.py
+- check_private_fast_lane_91.py
+- check_target_campaign_report_91.py
+- check_speed_hotpath_96.py
+- check_priority_transport_96.py
+- market provider/concurrency/tools
+- voice profile
+- installer transaction
+
+نکته: تست‌ها آفلاین/سورس/SQLite هستند. سرعت و FloodWait واقعی سروش باید پس از نصب از Live Log اندازه‌گیری شود.

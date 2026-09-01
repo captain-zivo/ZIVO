@@ -1,0 +1,19 @@
+دستور ایمن نصب و اجرای ZIVO 60.96.11 روی سرور
+
+نام فایل کامل:
+ZIVO_zivo60_96_11_ACTIVE_MARKET_VOICE_ADMIN_FULL_SOURCE_6MB.zip
+
+بعد از انتقال فایل به /root، ابتدا سلامت ZIP و فضای سرور را ببین:
+unzip -tq /root/ZIVO_zivo60_96_11_ACTIVE_MARKET_VOICE_ADMIN_FULL_SOURCE_6MB.zip && ls -lh /root/ZIVO_zivo60_96_11_ACTIVE_MARKET_VOICE_ADMIN_FULL_SOURCE_6MB.zip && df -h /
+
+اگر تست ZIP موفق بود، همین یک خط را اجرا کن:
+ZIP=/root/ZIVO_zivo60_96_11_ACTIVE_MARKET_VOICE_ADMIN_FULL_SOURCE_6MB.zip; DIR=/root/ZIVO_zivo60_96_11_full; test -f "$ZIP" && unzip -tq "$ZIP" && [ "$(df -Pm / | awk 'NR==2 {print $4}')" -ge 512 ] && rm -rf -- "$DIR" && mkdir -p "$DIR" && unzip -o "$ZIP" -d "$DIR" && chmod +x "$DIR/install_zivo60.sh" && bash "$DIR/install_zivo60.sh"
+
+شناسه مالک کل را در فایل محیطی main با این متغیر تنظیم کن:
+ZIVO_GLOBAL_OWNER_ID=49145577
+
+نصب‌گر پیش از توقف سرویس، سورس و تست‌های قبلی و تازه را بررسی می‌کند؛ سپس بکاپ می‌گیرد، فایل‌ها را جایگزین می‌کند، وابستگی‌ها را نصب می‌کند و تا مشاهده ZIVO is ready منتظر می‌ماند. هر خطای اصلی باعث Rollback خودکار می‌شود.
+
+اگر نصب شروع نشد، خروجی این دو دستور را بفرست:
+df -h /
+unzip -tq /root/ZIVO_zivo60_96_11_ACTIVE_MARKET_VOICE_ADMIN_FULL_SOURCE_6MB.zip

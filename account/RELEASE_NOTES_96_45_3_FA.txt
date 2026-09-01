@@ -1,0 +1,7 @@
+ZIVO 96.45.3 Installer Low-Disk Hotfix
+
+- Runtime core remains zivo60.96.45 and Official13.
+- Replaces the fixed 512MB deployment block with a 192MB operational floor while keeping the historical 512MB compatibility marker.
+- Before the disk check, removes only obsolete versioned venvs and rollback snapshots older than the newest two.
+- Preserves the currently active venv and venv targets referenced by the two newest rollback snapshots.
+- If free space remains below the operational floor, exits before touching live services.

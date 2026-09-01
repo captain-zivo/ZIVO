@@ -1,0 +1,18 @@
+ZIVO QA — zivo60.96.30
+
+موارد گزارش‌شده و وضعیت آفلاین:
+- خوشامد کار نمی‌کند: Root Cause مسیر Event/Hot RPC بررسی و Raw fallback + bounded profile resolution اضافه شد؛ تست آفلاین PASS، Live Soroush هنوز لازم است.
+- تشخیص/برخورد اسپم: ترتیب Router اصلاح شد؛ سناریوی Flood Guard با Ban/Delete شبیه‌سازی‌شده PASS، Live permissions هنوز لازم است.
+- کندی: اسکن 200 عضو در Join حذف و duplicate anti-spam work در حالت Flood Guard فعال حذف شد؛ benchmark سراسری Live انجام نشده است.
+- Forward: اصلاح durable verified-delete نسخه 96.29 حفظ و regression آن PASS است؛ Live delete permission هنوز نیاز به تست دارد.
+- مالک «ثبت نشده»: durable/session identity fallback اضافه و تست PASS است؛ عکس واقعی وابسته به access_hash/photo زنده است.
+- پیام وجود اکانت دیگر ZIVO: اطلاعات account/self/requester و provenance آورنده نصب اضافه شد؛ تست با مالک و آورنده متفاوت PASS است.
+- میوووو/میو هاپ/زوزه: aliases به Claim مشترک اضافه و cooldown مشترک تست شد.
+- آموزش فحش به سخنگو: یک Detector مشترک برای قفل فحش و آموزش سخنگو اضافه شد؛ نمونه‌های profanity/sexual/separator/stretch/latin obfuscation در تست رد شدند و false-positiveهای نمونه مثل «تکون نخور» رد نشدند.
+
+مواردی که هنوز Live-only هستند:
+- تحویل واقعی خوشامد در گروه عمومی/خصوصی Soroush.
+- Ban/Delete واقعی Flood Guard با دسترسی ادمین هر اکانت.
+- بازیابی عکس واقعی مالک از Soroush.
+- حذف واقعی Forward در گروه‌های دارای permission.
+- latency واقعی زیر بار چندگروهی و campaign queue.

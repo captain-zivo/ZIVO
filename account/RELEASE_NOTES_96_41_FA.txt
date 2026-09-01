@@ -1,0 +1,8 @@
+ZIVO zivo60.96.41
+
+- Join درخواست‌شده از بات رسمی به مسیر foreground منتقل شد و دیگر پشت background transport/inventory/campaign منتظر نمی‌ماند.
+- Worker در حالت idle هر 30ms صف Join را بررسی می‌کند.
+- Join رسمی قبل از اعلام نتیجه، مسیر fast write/activation را همان Job اجرا می‌کند.
+- نتیجه Join بین FULL / BASIC / PENDING تفکیک می‌شود.
+- در ZIVO_OFFICIAL_CONTROL_ONLY، ارسال پیوی از اکانت‌های اجرایی متوقف است؛ رابط کاربر فقط بات رسمی است.
+- منطق گروه، قفل‌ها، فیلتر، اسپم، پاکسازی و Remote Command Router اصلی حفظ شده است.

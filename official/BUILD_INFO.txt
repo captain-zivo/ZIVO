@@ -1,0 +1,5 @@
+ZIVO Official22 paired with zivo60.96.53
+Runtime: /opt/ZIVO_OFFICIAL_BOT22/zivo_official22.py
+Service: zivo-official22.service
+IPC: /run/zivo-ipc/{main,acc2,acc3}.sock
+Features: Official-start identity sync/recovery, nested-forward Meow targets, tier-priority UX, audited Rial Wallet, Zibal/Card Top-up, Wallet Subscription/Meow/Gift Purchase, Photo Receipt Review, Rich Media Full-Network Admin Campaign, Full Lock Admin, Dynamic Group Panel

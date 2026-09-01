@@ -1,0 +1,21 @@
+ZIVO zivo60.96.39.3 QA SUMMARY
+
+Root cause covered:
+- Single-shot existing-session GetState could fail transiently at cutover.
+- systemd RestartSec window was treated as immediate installer failure.
+
+Fixes verified:
+- bounded existing-session startup retry, no SendCode/SignIn/start path
+- main + secondary wait-for-ready systemd startup gate
+- startup failure status/journal/NRestarts diagnostics before rollback
+- 61-file Installed QA inventory parity
+- prior cleanup/filter/spam/premium/payment regressions preserved
+
+Build-environment check*.py sweep: 61/61 exit-code 0.
+Critical post-change checks rerun:
+- check_installer_transaction_96_11.py: PASS
+- check_zivo60_96_39_3_startup_cutover.py: PASS
+- check_zivo60_96_39_2_installed_inventory.py: PASS (61 checks)
+- check_zivo60_96_39_1_full_core_audit.py: PASS (61/61 inventory)
+- Python py_compile: PASS
+- bash -n installer/payment-domain helper: PASS

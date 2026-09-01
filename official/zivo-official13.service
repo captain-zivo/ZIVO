@@ -1,0 +1,18 @@
+[Unit]
+Description=ZIVO Official Soroush Plus Bot v13 UX + Premium Checkout
+After=network-online.target zivo60.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/ZIVO_OFFICIAL_BOT13
+ExecStart=/opt/ZIVO_OFFICIAL_BOT13/venv/bin/python -O /opt/ZIVO_OFFICIAL_BOT13/zivo_official13.py
+Restart=always
+RestartSec=2
+User=root
+Environment=PYTHONUNBUFFERED=1
+Environment=ZIVO_IPC_DIR=/run/zivo-ipc
+Environment=ZIVO_IPC_ACCOUNTS=main,acc2,acc3
+
+[Install]
+WantedBy=multi-user.target

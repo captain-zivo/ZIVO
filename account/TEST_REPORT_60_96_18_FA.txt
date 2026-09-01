@@ -1,0 +1,47 @@
+ZIVO zivo60.96.18 - Runtime Presence / BASIC + FULL Access
+
+هدف این نسخه:
+- بعد از پاک شدن دیتابیس سرور، گروه‌هایی که اکانت زیوو واقعاً در آن‌ها حضور دارد با اولین فرمان معتبر دوباره قابل استفاده شوند.
+- ادمین بودن اکانت زیوو شرط روشن شدن هسته گروه نباشد.
+- اگر زیوو ادمین سروش باشد حالت FULL و اگر عضو عادی باشد حالت BASIC فعال باشد.
+
+رفتار جدید:
+1) Runtime Bootstrap
+- اولین فرمان واقعی زیوو در گروه ناشناخته، بدون نیاز به «نصب» و بدون انتظار برای pending activation یک installation امن می‌سازد.
+- owner_user_id=0 است تا هیچ عضو عادی تصادفی مالک زیوو نشود.
+- Default lockهای مخرب در Bootstrap روشن نمی‌شوند.
+- Shared claim و lifecycle همان گروه ثبت می‌شوند.
+
+2) بازیابی مقام از خود سروش
+- اگر ارسال‌کننده فرمان، Creator واقعی گروه باشد، مالکیت زیوو بعد از اثبات مستقیم Soroush به او برمی‌گردد.
+- اگر ارسال‌کننده Native Admin باشد، مقام ادمین زیوو بعد از اثبات مستقیم ثبت می‌شود.
+- Sync کامل Creator/Adminها در Background انجام می‌شود.
+
+3) BASIC / FULL
+- FULL: اکانت زیوو Native Admin/Creator است و پاکسازی/بن/پین/مدیریت مخرب می‌تواند اجرا شود.
+- BASIC: اکانت زیوو عضو عادی است؛ راهنما، سرگرمی، پروفایل، اصل، سخنگو، اقتصاد/بازی، مقام‌های داخلی و قابلیت‌هایی که به RPC مدیریتی سروش نیاز ندارند کار می‌کنند.
+- پاکسازی در BASIC با پیام روشن اعلام می‌کند که فقط همان عملیات به ادمین واقعی نیاز دارد؛ هسته گروه خاموش نمی‌شود.
+- اگر Probe وضعیت ادمین خطای موقت بدهد، عملیات مدیریتی بی‌دلیل Block نمی‌شود و خود RPC سروش تصمیم نهایی را می‌دهد.
+
+4) نصب دستی
+- «نصب» دیگر به ادمین بودن خود اکانت زیوو وابسته نیست؛ مالک واقعی گروه همچنان از خود سروش تأیید می‌شود.
+
+تست‌های اجراشده:
+- verify_zivo60_91.py: PASS
+- check_command_core_91.py: PASS
+- check_moderation_security_91.py: PASS
+- check_filter_rate_91.py: PASS
+- check_delete_governor_96.py: PASS
+- check_priority_transport_96.py: PASS
+- check_zivo60_96_12_repairs.py: PASS
+- check_zivo60_96_15_legacy_group_recovery.py: PASS
+- check_zivo60_96_16_legacy_runtime_reconcile.py: PASS
+- check_zivo60_96_17_send_flood_recovery.py: PASS
+- check_installer_transaction_96_11.py: PASS
+- check_zivo60_96_18_runtime_presence.py: PASS
+- Python py_compile: PASS
+- bash -n install_zivo60.sh: PASS
+
+Live-only:
+- تشخیص واقعی FULL/BASIC روی Soroush پس از نصب باید با یک گروه که زیوو ادمین است و یک گروه که عضو عادی است تست شود.
+- Delete/Ban/Pin همچنان نهایتاً تابع Permission واقعی Soroush هستند.

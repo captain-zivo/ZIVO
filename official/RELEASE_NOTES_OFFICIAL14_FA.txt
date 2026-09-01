@@ -1,0 +1,6 @@
+ZIVO Official14
+- Premium tier UI and real Core entitlements.
+- Polished ZIVO start/onboarding text and linked channel buttons.
+- Existing connected group reuse without duplicate account Join.
+- Persistent managed-group mapping through Core IPC.
+- Preview/confirm group connection, direct gateway URL, payment check, dedicated activation success page.

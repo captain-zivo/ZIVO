@@ -1,0 +1,7 @@
+ZIVO zivo60.96.24 Installer Hotfix V2
+
+Fix:
+- Installed-copy test no longer assumes /opt/zivo60/install_zivo60.sh exists.
+- check_zivo60_96_24_cleanup_private_inventory.py reads installer path from ZIVO_INSTALLER_UNDER_TEST.
+- Installer passes its source installer path during the installed-copy 96.24 check.
+- Runtime cleanup and all-private inventory source is unchanged from 96.24.

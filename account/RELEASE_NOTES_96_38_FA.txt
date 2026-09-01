@@ -1,0 +1,22 @@
+ZIVO zivo60.96.38 — Premium + Payment Foundation
+
+این نسخه Foundation است و هنوز قابلیت‌های فعلی کاربران Free را Paywall نمی‌کند.
+
+اضافه‌شده:
+- چهار پلن FREE / SILVER / GOLD / DIAMOND با Subscription Engine و RAM cache.
+- قیمت‌گذاری پلن‌ها فقط به ریال و قابل ویرایش از پنل تلگرام ادمین.
+- سفارش خرید اشتراک در گروه و ادامه پرداخت در پیوی.
+- پرداخت با کیف پول ریالی ZIVO + Ledger و تراکنش اتمیک.
+- کارت‌به‌کارت با شماره کارت/نام صاحب کارت قابل تنظیم، مبلغ دقیق ریالی، دریافت عکس رسید و ارسال کامل به تلگرام ادمین برای تأیید/رد.
+- Zibal request/start/callback/verify و Amount Match؛ فعال‌سازی خودکار فقط پس از Verify واقعی.
+- تنظیم Merchant، دامنه پرداخت و Callback از پنل تلگرام.
+- با وارد کردن فقط دامنه مثل pay.example.com، Callback خودکار https://pay.example.com/zivo/zibal/callback ساخته می‌شود.
+- Callback health endpoint: /zivo/payment/health
+- setup_zivo_payment_domain.sh برای راه‌اندازی Nginx + HTTPS + Reverse Proxy؛ سایت اصلی لازم نیست فعال باشد.
+- ابزار مدیریتی کسر Meow از یک کاربر، کاربران یک گروه، همه گروه‌ها یا کل کاربران با Ledger.
+
+امنیت:
+- Callback داخلی فقط روی 127.0.0.1:8765 است و از طریق reverse proxy عمومی می‌شود.
+- رسید کارت‌به‌کارت بدون تأیید ادمین اشتراک را فعال نمی‌کند.
+- زیبال بدون Verify و تطبیق مبلغ اشتراک را فعال نمی‌کند.
+- کیف پول اجازه موجودی منفی نمی‌دهد.

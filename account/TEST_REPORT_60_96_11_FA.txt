@@ -1,0 +1,53 @@
+ZIVO 60.96.11 — گزارش تست نهایی
+
+نتیجه کلی
+- 29 تست مستقل نصب و رگرسیون: PASS
+- زمان اجرای یک‌جای مجموعه در محیط ساخت: 153.11 ثانیه
+- py_compile سورس‌ها و تست‌های تازه: PASS
+- verify_zivo60_91.py: PASS
+- تعداد متن‌های فارسی محافظت‌شده در zivo60.py: دقیقاً 3,951 مورد با هش مرجع
+- syntax نصب‌گر Bash و بررسی ترتیب Snapshot/Rollback: PASS
+- خط پایان install_zivo60.sh: فقط LF
+
+تست‌های اجراشده
+1. check_activation_card_recovery_96_11.py
+2. check_command_core_91.py
+3. check_delete_governor_96.py
+4. check_filter_rate_91.py
+5. check_help_permission_91.py
+6. check_historical_join_recovery_91.py
+7. check_join_guide_ttt_96_10.py
+8. check_moderation_security_91.py
+9. check_priority_transport_96.py
+10. check_private_fast_lane_91.py
+11. check_private_join_priority_91.py
+12. check_private_join_recovery_91.py
+13. check_private_notice_91.py
+14. check_runtime_log_hygiene_91.py
+15. check_smart_filter_speed_93.py
+16. check_speed_filter_font_ban_91.py
+17. check_speed_hotpath_96.py
+18. check_target_campaign_report_91.py
+19. check_transport_hygiene_91.py
+20. check_welcome_hotfix_91.py
+21. check_zivo_market_concurrency.py
+22. check_zivo_market_provider.py
+23. check_zivo_market_tools.py
+24. check_zivo_voice_profiles.py
+25. check_zivo60_94_features.py
+26. check_zivo60_95_social_games.py
+27. check_zivo60_96_11_features.py
+28. verify_zivo60_91.py
+29. check_installer_transaction_96_11.py
+
+بررسی‌های عمیق این مرحله
+- کارت فعال‌سازی: Migration قدیمی، تراکنش اتمیک نصب/صف کارت، Rollback تزریق‌شده، بازسازی Job مفقود، ثبت delivered و حذف Job: PASS
+- ویس: پیش‌فرض auto، حفظ ZIVO_TTS_VOICE قبلی، تغییر جزئی بدون ازبین‌رفتن فیلدهای دیگر، کپی بین گروه‌ها و پاک‌شدن Cache: PASS
+- بازار: 48 درخواست هم‌زمان فقط یک واکشی می‌سازند؛ اشتراک Task در Timeout، توقف کوتاه خطا و مهار Log storm: PASS
+- ماشین‌حساب: parser بدون eval، تقدم عملگر، ارقام فارسی/عربی، ورودی مخرب، تقسیم بر صفر و محاسبه دقیق عدد 60رقمی: PASS
+- مقام‌دهی: هر دو ترتیب آیدی/یوزرنیم، محدوده SQLite int64، اثبات عضویت همان گروه، جلوگیری از تغییر مالک و ثبت Backup dirty: PASS
+- قفل‌ها: رابط خوانا، aliasهای فاصله‌دار، تغییر گروهی با فرمان تأیید و پاک‌سازی فوری Cache ویژه: PASS
+- نصب‌گر: venv مرحله‌ای، تعویض اتمیک، Rollback سورس/venv/account-env و حفظ کلیدهای سفارشی main.env: PASS
+
+مرز تست
+تست‌های بازار، ویس و انتقال پیام در محیط ساخت عمداً بدون شبکه و با Stub اجرا شدند تا نصب تکرارپذیر و امن باشد. دسترسی واقعی TGJU، Edge-TTS و ارسال Soroush باید پس از نصب روی سرور با لاگ زنده بررسی شود؛ نصب‌گر در خطای Predeploy یا Runtime به نسخه سالم قبلی Rollback می‌کند.

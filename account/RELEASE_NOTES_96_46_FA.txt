@@ -1,0 +1,7 @@
+ZIVO zivo60.96.46
+- FREE/SILVER/GOLD/DIAMOND feature gates are enforced in Core.
+- Existing ZIVO account in a group is reused; duplicate account Join is blocked.
+- Official managed group access is persisted in shared Core DB and survives Official restart.
+- One-time Official private membership onboarding persists through Core IPC.
+- Premium economy, Diamond activation bonus guard, reports/security premium surfaces.
+- Official14 adds polished start/membership/group/payment UX.

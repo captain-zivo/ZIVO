@@ -1,0 +1,8 @@
+ZIVO 60.96.50.1
+- رفع Rollback تست تاریخی check_zivo60_96_12_repairs بدون حذف یا دورزدن تست
+- پاکسازی N فقط N پیام اخیر قبل فرمان را بررسی می‌کند؛ پین‌ها محافظت می‌شوند و با پیام قدیمی‌تر جایگزین نمی‌شوند
+- جلوگیری از هم‌پوشانی DeleteMessages پس از Timeout درخواست shielded
+- Soft-grace برای Delete دیررس تا Timeout کاذب به کاربر نمایش داده نشود
+- Retry تطبیقی: Batch شکست‌خورده 100تایی فقط در مسیر خطا به 50+50 تقسیم می‌شود
+- Success path همچنان Batchهای 100تایی و بدون Readback اضافه برای سرعت بالا
+- حفظ کامل Premium/Meow/Receipt/Welcome/Speaker/Campaign و Official19

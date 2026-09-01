@@ -1,0 +1,9 @@
+ZIVO zivo60.96.38.1 — Installer Hotfix
+
+- منطق Premium/Payment نسخه 96.38 بدون تغییر حفظ شده است.
+- Root Cause نصب ناموفق: DEPLOY_FILES تست‌های 96.31 تا 96.37 را اعلام می‌کرد، اما Cutover آن فایل‌ها را کپی نمی‌کرد.
+- install_zivo60.sh نیز در Live tree کپی نمی‌شد، در حالی که تست Premium از Installed Copy به آن نیاز داشت.
+- DEPLOY_FILES اکنون منبع واحد Cutover است و هر فایل اعلام‌شده به /opt/zivo60 Sync می‌شود.
+- فایل‌های اجرایی با mode مناسب و سایر artifactها با mode امن کپی می‌شوند.
+- Invariant بعد Cutover حفظ شده و همچنان نصب ناقص را Block می‌کند.
+- تست اختصاصی 96.38.1 برای جلوگیری از تکرار drift اضافه شده است.

@@ -1,0 +1,12 @@
+ZIVO zivo60.96.33 — SOURCE PRESERVATION REPORT
+
+Baseline 96.32 files excluding old SHA256 manifest: 249
+Current files before new manifest: 253
+Missing baseline files: 0
+Added files: 4
+
+Added:
+RELEASE_NOTES_96_33_FA.txt
+RUN_COMMAND_96_33_FA.txt
+TEST_REPORT_60_96_33_FA.txt
+check_zivo60_96_33_profanity_guard_expansion.py

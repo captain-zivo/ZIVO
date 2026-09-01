@@ -1,0 +1,5 @@
+ZIVO 60.96.23 Installer Fix V2
+
+- رفع لیست دوم hard-code شده نصب که فایل check_zivo60_96_23_private_inventory_priority.py را به /opt/zivo60 کپی نمی‌کرد.
+- افزودن post-cutover invariant: پیش از Installed-Copy checks، وجود تمام DEPLOY_FILES در مسیر live بررسی می‌شود.
+- در صورت هر اختلاف بین declaration و cutover، نصب قبل از تست‌ها fail/rollback می‌شود و نام فایل مفقود را صریح گزارش می‌کند.

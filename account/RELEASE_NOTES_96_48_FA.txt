@@ -1,0 +1,9 @@
+ZIVO 60.96.48 — Meow Commerce + Lock Admin + Rich Campaign
+- انتقال Meow از Official با ID/username/forward و تأیید دو مرحله‌ای؛ فقط Start شدن Official مقصد لازم است
+- خرید Meow برای خود/دیگران، حداقل 100، قیمت واحد 40 تومان (400 ریال)
+- سفارش Meow با تخفیف، زیبال، کارت‌به‌کارت، Verify و شارژ اتمیک
+- Gift Code یک‌بارمصرف ZIVO######## و اعلان استفاده به سازنده
+- Queue اعلان Official برای خرید هدیه/Meow و استفاده کد هدیه
+- Rich Campaign IPC برای private/groups/both با انتخاب main/acc2/acc3/all و media path امن
+- IPC مدیریت تمام قفل‌ها؛ toggle برای همه پلن‌ها، warning/autoban اختصاصی از GOLD
+- تمام Premium Tier Gates نسخه 96.47 حفظ شده‌اند

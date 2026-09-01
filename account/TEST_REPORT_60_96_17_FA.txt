@@ -1,0 +1,15 @@
+ZIVO 60.96.17 - Send Flood Recovery / Command Delivery
+
+Live 60.96.16 evidence:
+- legacy group command routing is working.
+- acc2 repeatedly received FloodWait(2) on SendMessageRequest.
+- short FloodWait escaped send_group_text/send_copyable handlers and became router error.
+
+Fixes:
+1. One serialized SendMessage lane per account.
+2. Small 0.18s default successful-send spacing.
+3. Any SendMessage FloodWait arms one shared account pause.
+4. Foreground group commands retry short FloodWaits (default two retries, <=6s waits).
+5. Foreground command holds the first post-FloodWait slot so background notices cannot steal it.
+6. Background send remains non-retrying, preventing retry storms.
+7. Legacy runtime reconciliation, delete safety and all prior features remain unchanged.

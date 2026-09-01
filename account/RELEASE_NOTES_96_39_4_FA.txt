@@ -1,0 +1,15 @@
+ZIVO zivo60.96.39.4 — Premium Schema Migration Hotfix
+
+علت خطای Live:
+- دیتابیس موجود از 96.38 جدول premium_orders را بدون ستون order_code/order_kind داشت.
+- CREATE TABLE IF NOT EXISTS ستون جدید را به جدول موجود اضافه نمی‌کند.
+- 96.39 قبل از اجرای ALTER TABLE، Unique Index روی order_code می‌ساخت و Boot با no such column: order_code متوقف می‌شد.
+
+اصلاح:
+- حذف Index وابسته به order_code از schema پایه.
+- BEGIN IMMEDIATE برای migration.
+- ALTER TABLE برای order_code/order_kind قبل از هر query/index وابسته.
+- Backfill و de-duplicate کدهای ZV قبل از ساخت Unique Index.
+- migration idempotent برای اجرای مجدد و partial migration.
+- تست مستقیم روی schema واقعی 96.38 و partial duplicate migration.
+- تمام قابلیت‌های 96.39.3، Premium/Payment، Cleanup/Filter/Spam و Startup fixes حفظ شده‌اند.

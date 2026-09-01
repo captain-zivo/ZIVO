@@ -1,0 +1,5 @@
+ZIVO 96.45.5 - Official13 preflight runtime dependency hotfix
+- رفع ModuleNotFoundError: requests در install_all.sh.
+- تست Official13 دیگر با python3 خام قبل از آماده‌شدن dependency اجرا نمی‌شود.
+- تست runtime رسمی فقط با Python واقعی سرویس و پس از انتخاب/reuse/create شدن venv اجرا می‌شود.
+- منطق 96.45، Direct IPC، خرید اشتراک، اتصال گروه، فیلتر محتوا و Bio Guard بدون تغییر است.

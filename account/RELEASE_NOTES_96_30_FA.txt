@@ -1,0 +1,39 @@
+ZIVO zivo60.96.30
+
+Behavioral QA hotfix — Welcome + Spam/Flood + Owner + Multi-account + Meow + Speaker Guard
+
+1) خوشامد
+- برای Joinهای Service یک مسیر Raw fallback اضافه شد تا وابستگی کامل به Event نرمال کاهش یابد.
+- اسکن get_participants(limit=200) از Hot Path خوشامد حذف شد و Resolve زنده زمان محدود دارد.
+- گروه خصوصی: پاسخ روی پیام ورود عضو در صورت وجود message_id.
+- گروه عمومی: پیام عادی با نام/آیدی عضو، بدون وابستگی به Reply Service.
+
+2) اسپم و سرعت
+- Flood Guard واقعی قبل از anti-spam shield قدیمی اجرا می‌شود.
+- وقتی Flood Guard روشن است، shield تکراری از مسیر پیام عادی Skip می‌شود.
+- سناریوی رفتاری 7 پیام متوالی، مسیر Ban + Purge/Delete را با توابع واقعی Runtime شبیه‌سازی می‌کند.
+
+3) مالک
+- fallback عمومی «ثبت نشده» حذف شد؛ ابتدا Session entity و سپس durable global profile استفاده می‌شود.
+- اگر Session access_hash را بازیابی کند، مسیر عکس مالک نیز می‌تواند ادامه پیدا کند.
+
+4) چند اکانت
+- پیام «ربات عضو گروه هست» با پیام دقیق‌تر جایگزین شد: account key، self ID، گروه، آورنده ثبت‌شده نصب و requester فعلی در صورت موجود بودن.
+- ستون‌های introduced_by_user_id / introduced_by_username به installations با migration سازگار با دیتابیس‌های قبلی اضافه شدند؛ نصب جدید requester واقعی را جدا از مالک گروه ذخیره می‌کند.
+- برای نصب‌های تاریخی که provenance وجود ندارد، نمایش به مالک ثبت‌شده fallback می‌کند.
+
+5) اقتصاد میو
+- میوی کشیده، «میو هاپ»، «زوزه» و شکل‌های طبیعی مشابه به meow_claim Route می‌شوند.
+- همه Aliasها همان cooldown پایدار را استفاده می‌کنند و راه دورزدن cooldown نیستند.
+
+6) محافظ آموزش سخنگو
+- Trigger و Response یادگرفته‌شده قبل از ذخیره برای ناسزا/محتوای جنسی بررسی می‌شوند.
+- نرمال‌سازی جداکننده، zero-width و کشیده‌نویسی برای کاهش دورزدن اضافه شد.
+- این Guard پوشش گسترده دارد اما تضمین «تمام ناسزاهای ممکن در هر املای ناشناخته» نیست.
+
+7) Help
+- راهنمای خوشامد، سرگرمی/میو و سخنگو هم‌زمان با رفتار جدید به‌روزرسانی شده‌اند.
+
+8) حفظ اصلاحات قبلی
+- Forward durable verified-delete + retry/audit نسخه 96.29 حفظ شده است.
+- Pet natural name-call نسخه 96.29 حفظ شده است.

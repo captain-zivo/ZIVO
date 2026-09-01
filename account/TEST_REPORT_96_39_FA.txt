@@ -1,0 +1,32 @@
+ZIVO zivo60.96.39 QA Report
+
+Syntax PASS:
+- zivo60.py / zivo_premium.py / check 96.39 via Python py_compile
+- install_zivo60.sh / setup_zivo_payment_domain.sh via bash -n
+
+Dedicated 96.39 PASS:
+- exact 1/2/3-month IRR pricing
+- non-sequential buyer-owned ZV order codes
+- PM installed-group selection
+- wallet top-up/card/Zibal foundations
+- duplicate/concurrent approval idempotency
+- buyer subscription/history/remaining-time surfaces
+- cross-account group activation notification
+- Telegram admin finance controls
+
+Regression directly re-run and PASS during 96.39 work:
+- 96.20–96.28 individually
+- 96.29 Behavioral QA
+- 96.30 Owner/Welcome/Spam/Meow/Guard
+- 96.31 Transport
+- 96.32 Owner Zero Recovery
+- 96.33 Profanity Guard
+- 96.34 Cleanup
+- 96.35 Owner Multigroup
+- 96.36 Welcome
+- 96.37 Forward/Welcome Fast Lane
+- 96.38 Premium/Payment Foundation
+- 96.38.1 Installer Hotfix
+- Installer Transaction 96.11
+
+Live monetary Zibal payment is not falsely claimed as tested offline; it must be tested after deploy with the real merchant.

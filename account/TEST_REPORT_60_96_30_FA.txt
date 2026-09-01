@@ -1,0 +1,18 @@
+ZIVO zivo60.96.30 — گزارش تست آفلاین Full Source
+
+وضعیت تست درخت Release پس از تغییرات کد/Installer/Help:
+- تعداد check_*.py: 48
+- PASS: 48
+- FAIL: 0
+- TIMEOUT: 0
+
+تأییدهای جداگانه:
+- Python compile برای zivo60.py و zivo_social_games.py: PASS
+- bash -n برای install_zivo60.sh: PASS
+- installer transaction regression: PASS
+- behavioral QA جدید Welcome/Spam/Owner/Multi-account/Meow/Speaker Guard: PASS
+- behavioral QA نسخه 96.29 برای Forward/Pet: PASS
+- تمام Regressionهای تاریخی موجود پروژه: PASS
+
+محدودیت:
+این نتیجه آفلاین است. RPC واقعی Soroush، permission واقعی Ban/Delete/Reply، عکس مالک، welcome delivery، campaign queue و latency واقعی فقط بعد از Deploy روی سرور و تست Live قابل تأیید هستند.

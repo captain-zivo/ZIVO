@@ -1,0 +1,7 @@
+ZIVO 96.39.3 SOURCE PRESERVATION REPORT
+Baseline: 96.39.2 Full Source
+Baseline files before overlay: 288
+Missing baseline files: 0
+New runtime QA test: check_zivo60_96_39_3_startup_cutover.py
+New release documentation: 96.39.3 notes/QA report
+All Premium Purchase UX, Zibal, wallet, card-to-card, cleanup, word-filter and Spam Guard source remains present.

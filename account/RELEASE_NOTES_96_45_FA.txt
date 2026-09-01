@@ -1,0 +1,7 @@
+ZIVO 96.45 UX Checkout + Group Preview
+
+- معماری Direct Unix IPC نسخه 96.44 بدون تغییر بنیادی حفظ شد.
+- inspect_link قبل از Join برای پیش‌نمایش گروه اضافه شد.
+- رتبه‌بندی اکانت‌ها بر اساس latency واقعی IPC اضافه شد؛ تعداد گروه‌ها در UI نمایش داده نمی‌شود.
+- Premium IPC: discount_apply / cancel / check_payment و مدیریت کد تخفیف اضافه شد.
+- فیلتر محتوا newest-100، Bio Guard سخت‌گیرانه، Spam/Cleanup نسخه‌های قبل حفظ شدند.

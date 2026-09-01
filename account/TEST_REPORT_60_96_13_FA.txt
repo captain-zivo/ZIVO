@@ -1,0 +1,21 @@
+ZIVO zivo60.96.13 - گزارش تست محلی
+
+Current verified local tests:
+- verify_zivo60_91.py: PASS (Persian runtime literals=3992, exact hash)
+- check_zivo60_96_12_repairs.py: PASS
+- check_zivo60_96_13_live_regressions.py: PASS
+- check_installer_transaction_96_11.py install_zivo60.sh: PASS
+- Python top-level py_compile: 43/43
+
+96.13 targeted coverage:
+- origin wizard priority and «ندارم» continuation
+- shared origin/profile across independent account DBs
+- bot-message cleanup default opt-in
+- installed-group inactivity auto-leave disabled by default
+- old-group ChatSendPlainForbidden formatted fallback
+- destructive stale cleanup schedule authorization/inaccessible guard
+
+Live-only verification still required after deployment:
+- actual Soroush event flow for origin wizard across main/acc2/acc3
+- old groups that were already left before 96.13 may need re-add/re-install
+- real network FloodWait/permission behavior depends on group permissions and Soroush API

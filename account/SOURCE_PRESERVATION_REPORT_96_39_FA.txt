@@ -1,0 +1,10 @@
+ZIVO zivo60.96.39 Source Preservation
+
+Baseline: ZIVO_zivo60_96_38_1_FULL_SOURCE_10MB_INSTALLER_HOTFIX.zip
+Build method: fresh baseline extraction + overlay of changed 96.39 runtime/installer/test files + release documents.
+Baseline files intentionally deleted: 0
+Runtime changed: zivo60.py, zivo_premium.py, install_zivo60.sh
+Compatibility test changed: check_zivo60_96_38_premium_payment_foundation.py
+New QA: check_zivo60_96_39_purchase_ux.py
+Baseline support/cache files are preserved; current interpreter cache is refreshed from 96.39 source.
+Scratch *.pre96_39 files are not shipped.

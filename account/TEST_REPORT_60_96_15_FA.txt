@@ -1,0 +1,39 @@
+ZIVO zivo60.96.15 - TEST REPORT
+
+موضوع: بازیابی گروه‌های قدیمی در معماری سه‌اکانتی main/acc2/acc3
+
+علت ریشه‌ای بررسی‌شده:
+- installation و تنظیمات گروه per-account و در SQLite جدا ذخیره می‌شوند.
+- نسخه‌های قدیمی می‌توانند یک group_id را در چند DB باقی بگذارند یا Claim مشترک را به اکانتی نگه دارند که دیگر مسیر واقعی Event آن گروه نیست.
+- در نتیجه Event واقعی می‌تواند روی اکانتی برسد که State کامل همان گروه در DB دیگری است.
+
+اصلاحات 96.15:
+1) group_event_leases در zivo_multi_accounts.db: انتخاب اتمیک یک پاسخ‌دهنده زنده برای فرمان گروه.
+2) adopt_group_claim_from_live_event: جایگزینی Claim تاریخی با اکانتی که Event واقعی را برنده شده است.
+3) recover_legacy_group_installation: بازیابی installation و تنظیمات امن از DB اکانت دیگر.
+4) عدم انتقال cleanup_schedules، bot_message_delete_jobs و automationهای موقت.
+5) اجرای Recovery قبل از command gating، message-rate و anti-spam.
+6) Fail-open محدود: اگر Shared DB موقتاً Lock شود ولی installation محلی سالم است، فرمان گروه متوقف نمی‌شود.
+
+تست‌های اجراشده:
+- check_zivo60_96_15_legacy_group_recovery.py: PASS
+- check_zivo60_96_14_emergency_recovery.py: PASS
+- check_zivo60_96_13_live_regressions.py: PASS
+- check_zivo60_96_12_repairs.py: PASS
+- verify_zivo60_91.py: PASS / PERSIAN_RUNTIME_LITERALS=3992
+- check_command_core_91.py: PASS
+- check_filter_rate_91.py: PASS
+- check_delete_governor_96.py: PASS
+- check_priority_transport_96.py: PASS
+- check_private_fast_lane_91.py: PASS
+- check_moderation_security_91.py: PASS
+- check_zivo60_94_features.py: PASS
+- check_zivo60_95_social_games.py: PASS
+- Market provider/concurrency/tools: PASS
+- Voice profile: PASS
+- Installer transaction: PASS
+- Python compile + bash -n: PASS
+
+ریسک Live باقی‌مانده:
+- تأیید نهایی Membership/Send permission هر اکانت فقط روی سرور Soroush ممکن است.
+- اگر همه اکانت‌ها یک گروه را دریافت کنند ولی برنده Lease حق Send نداشته باشد، فرمان بعدی پس از انقضای Lease می‌تواند توسط اکانت دیگری Takeover شود؛ لاگ Live برای این حالت باید بررسی شود.

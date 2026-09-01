@@ -1,0 +1,4 @@
+ZIVO Account Core zivo60.96.53
+Controller: main + acc2 + acc3 over Unix IPC
+Features: DIAMOND/GOLD/SILVER/FREE response scheduling, exhaustive normal+archive campaign inventory, legacy-group rich-text fallback, Meow Commerce, Official recipient registry, Meow gift codes, Official notifications, Rich Campaign IPC, Full Lock Admin IPC
+Premium response order under contention: DIAMOND > GOLD > SILVER > FREE; no artificial delay while idle

@@ -1,0 +1,14 @@
+ZIVO zivo60.96.29 — گزارش تست آفلاین Full Source
+
+محیط تست: بسته ادغام‌شده 96.29 بر پایه Full Source واقعی 96.28
+تعداد check_*.py: 47
+نتیجه: PASS=47 / FAIL=0 / TIMEOUT=0
+
+تأییدهای جداگانه:
+- Python compile برای zivo60.py، zivo_social_games.py و behavioral QA: PASS
+- SHA256SUMS برای تمام فایل‌ها به‌جز خود manifest: PASS
+- behavioral QA جدید Forward/Pet: PASS
+- Regressionهای موجود 96.28: PASS
+
+محدودیت:
+این نتیجه آفلاین است. همه قابلیت‌های وابسته به RPC واقعی سروش، مجوزهای واقعی گروه، Peerهای زنده، ارسال واقعی Campaign، WriteForbidden/AdminRequired و حذف Live فقط بعد از Deploy روی سرور و تست Live قابل PASS نهایی هستند.

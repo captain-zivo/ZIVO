@@ -1,0 +1,6 @@
+SOURCE PRESERVATION 96.26
+
+مبنای نسخه: ZIVO 96.25 Test Fix V2 Full Source.
+قابلیت‌های قبلی حذف نشده‌اند.
+تغییرات محدود به Campaign execution/progress، schema شمارنده‌های کمپین، regression compatibility و installer 96.26 هستند.
+Join Worker عمداً روی Guard محافظه‌کار قبلی باقی مانده و فقط Campaign Worker از Fast Lane جدید استفاده می‌کند.

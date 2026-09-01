@@ -1,0 +1,13 @@
+ZIVO zivo60.96.27
+
+تمرکز نسخه: حذف سقف عملی حدود 200 Dialog/Group در Full Inventory و تبلیغات.
+
+اصلاحات اصلی:
+- مسیر اصلی کشف Dialog دیگر به SPlusthon iter_dialogs(limit=None) وابسته نیست.
+- Pagination خام با functions.messages.GetDialogsRequest و page size=100 اضافه شد.
+- offset_id + offset_date + offset_peer بعد از هر صفحه به‌صورت صریح جلو می‌روند.
+- ادامه Pagination دیگر به نوع پاسخ messages.DialogsSlice وابسته نیست؛ تا صفحه کوتاه یا cursor تکراری ادامه می‌دهد.
+- پوشه 0 (عادی) و پوشه 1 (آرشیو) جدا اسکن و سپس Deduplicate می‌شوند.
+- Full Inventory و Campaign Live Scan هر دو از همین paginator استفاده می‌کنند.
+- Progress تبلیغات 96.26 و Fast Lane حفظ شده‌اند.
+- پیوی‌های واقعی، opt-out، حذف Bot/Deleted، dedupe بین اکانت‌ها و تمام قابلیت‌های قبلی حفظ شده‌اند.

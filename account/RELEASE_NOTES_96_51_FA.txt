@@ -1,0 +1,8 @@
+ZIVO zivo60.96.51
+
+- ارسال متنی Campaign در گروه‌های قدیمی که Plain Message را رد می‌کنند، یک‌بار با Blockquote امن تکرار می‌شود.
+- ChatSendPlainForbidden دیگر به معنی خروج اکانت از گروه نیست و باعث حذف اشتباه Installation/Claim نمی‌شود.
+- Live Scan همه Dialogهای عادی و Archive برای main/acc2/acc3 بدون سقف حفظ شده است.
+- سرعت امن فعلی حفظ شده: هر اکانت Lane مستقل دارد و Send RPC پیش‌فرض هر 0.12 ثانیه کنترل می‌شود.
+- لغو دریافت پیوی، حذف Bot/Deleted و Dedup چنداکانتی حفظ شده‌اند.
+- دیتابیس و Schema تغییر نکرده‌اند؛ Installer همان Backup/Integrity/Rollback نسخه مبنا را اجرا می‌کند.

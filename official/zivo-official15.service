@@ -1,0 +1,18 @@
+[Unit]
+Description=ZIVO Official Soroush Plus Bot v15 Dynamic Group Panel + Payment Return + Soft Onboarding
+After=network-online.target zivo60.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/ZIVO_OFFICIAL_BOT15
+ExecStart=/opt/ZIVO_OFFICIAL_BOT15/venv/bin/python -O /opt/ZIVO_OFFICIAL_BOT15/zivo_official15.py
+Restart=always
+RestartSec=2
+User=root
+Environment=PYTHONUNBUFFERED=1
+Environment=ZIVO_IPC_DIR=/run/zivo-ipc
+Environment=ZIVO_IPC_ACCOUNTS=main,acc2,acc3
+
+[Install]
+WantedBy=multi-user.target

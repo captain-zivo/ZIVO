@@ -1,0 +1,4 @@
+systemctl restart zivo-official22.service
+systemctl status zivo-official22.service --no-pager -l
+journalctl -u zivo-official22.service -f
+ls -lah /run/zivo-ipc/

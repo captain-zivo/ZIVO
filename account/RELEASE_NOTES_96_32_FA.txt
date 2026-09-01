@@ -1,0 +1,19 @@
+ZIVO zivo60.96.32 — رفع قطعی owner=0 در دستور «مالک»
+
+مشکل Live تاییدشده:
+در بعضی گروه‌هایی که با Runtime bootstrap وارد رجیستری شده بودند، installations.owner_user_id هنوز 0 بود.
+دستور «مالک» بدون Repair این placeholder وارد fetch_owner_full_profile می‌کرد و کارت مالک برای user_id=0 ساخته می‌شد.
+شاهد Live: owner latest photo skipped ... owner=0 / owner card sent ... owner=0.
+
+اصلاح:
+1) قبل از ساخت کارت مالک، owner=0 حتماً Repair می‌شود.
+2) اولویت Repair:
+   - native_owner metadata که قبلاً با شواهد سروش ذخیره شده؛
+   - owner recovery cache؛
+   - اسکن محدودشده Live creator از سروش.
+3) نتیجه Repair در SQLite installations پایدار می‌شود.
+4) command sender هرگز صرفاً به خاطر ارسال «مالک» به مالک ارتقا داده نمی‌شود.
+5) اگر هیچ منبع قابل‌اعتماد مالک را برنگرداند، کارت owner=0 ساخته نمی‌شود و پیام موقت شفاف ارسال می‌شود.
+6) مسیر نام/username/access_hash/photo نسخه 96.30 بعد از Repair حفظ شده است.
+
+این نسخه قابلیت جدید کاربری اضافه نمی‌کند؛ بنابراین Registry راهنما نیاز به فرمان جدید ندارد.

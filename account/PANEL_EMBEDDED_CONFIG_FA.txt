@@ -1,0 +1,1 @@
+ZIVO 60.96.20 panel embedded fallback configuration. Environment variables still override embedded defaults.

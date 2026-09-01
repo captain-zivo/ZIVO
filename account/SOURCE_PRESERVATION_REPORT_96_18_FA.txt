@@ -1,0 +1,7 @@
+ZIVO zivo60.96.18 FULL SOURCE PRESERVATION
+Files before manifest: 178
+Working-tree bytes before final ZIP: 10575304
+- سورس کامل 96.17 حفظ شده است.
+- فایل جدید check_zivo60_96_18_runtime_presence.py اضافه شده است.
+- فایل TEST_REPORT_60_96_18_FA.txt اضافه شده است.
+- هیچ ماژول اصلی zivo60 / multi-account / speaker / market / social / voice حذف نشده است.

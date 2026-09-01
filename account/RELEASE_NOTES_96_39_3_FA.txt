@@ -1,0 +1,24 @@
+ZIVO zivo60.96.39.3 — Startup / Cutover Reliability Hotfix
+
+علت خطای Live در 96.39.2:
+- تمام تست‌های Installed Copy و Account Registry Reconcile PASS می‌شدند.
+- Boot واقعی فقط یک GetState انجام می‌داد. خطای موقت transport/session در لحظه Cutover باعث خروج پروسه می‌شد.
+- systemd با Restart=always وارد پنجره RestartSec می‌شد، اما Installer در اولین state غیر-active فوراً Rollback می‌کرد و فقط SERVICE DID NOT START چاپ می‌کرد.
+
+اصلاحات:
+- safe_session_start فقط با session موجود، Connect/GetState را تا 5 بار با backoff محدود Retry می‌کند.
+- هیچ مسیر interactive login، SendCode یا SignIn اضافه نشده است.
+- Installer دیگر اولین inactive/activating window را Fail حساب نمی‌کند.
+- main و secondary accountها تا 120 ثانیه برای ZIVO is ready پایش می‌شوند.
+- در شکست واقعی قبل Rollback: systemctl status، journal کامل از زمان Cutover، PID/state/NRestarts چاپ می‌شود.
+- تست جدید check_zivo60_96_39_3_startup_cutover.py به Full Source و Installed QA inventory اضافه شد.
+- تست transaction قدیمی برای contract جدید startup wait به‌روزرسانی شد.
+- تمام اصلاحات 96.39.1/96.39.2 برای پاکسازی، فیلتر کلمه، Spam Guard، Premium، Zibal، Wallet و Purchase UX حفظ شده‌اند.
+
+QA این Release:
+- 61/61 check*.py با exit-code 0 در محیط ساخت اجرا شدند.
+- check_zivo60_96_39_3_startup_cutover.py: PASS
+- check_installer_transaction_96_11.py: PASS
+- check_zivo60_96_39_2_installed_inventory.py: PASS (61 فایل)
+- check_zivo60_96_39_1_full_core_audit.py: PASS (61/61 inventory)
+- Python compile + bash -n: PASS

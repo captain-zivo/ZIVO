@@ -1,0 +1,47 @@
+ZIVO zivo60.96.31 — گزارش تحلیل Live Log نسخه 96.30
+
+منبع: journalctl/خروجی واقعی سرور کاربر پس از نصب 96.30.
+
+نتیجه کلی:
+- نصب و تست‌های آفلاین 96.30 موفق بودند.
+- Forward در گروه‌های دارای permission حذف واقعی موفق داشت (deleted=1).
+- durable delete در چند مورد پس از retry به PASS رسید.
+- Flood Guard در Live پیام‌های اسپم را واقعاً حذف کرد (نمونه‌های 20/20 و 7/7).
+- مشکل اصلی سرعت/پایداری از Transport pressure و RPCهای تکراری ناموفق بود.
+
+شمارش الگوها در فایل Live:
+- transport pressure: 88
+- SAFE AUTO RECONNECT: 14
+- transport circuit/breaker: 3
+- ChatWriteForbiddenError: 300
+- ChatAdminRequiredError: 80
+- ChannelPrivateError: 43
+- GetParticipantRequest NOT_SUPPORTED: 133
+- private send direct 404: 22
+- delete lane timeout: 6
+- forward pending-delete: 8
+- live delete durable PASS: 4
+- live delete durable unresolved: 8
+- live delete retry failed: 16
+- independent flood guard action: 11
+- hard-burst locally blocked: 16
+
+Root causeهای اصلاح‌شده در 96.31:
+1. Restart اشتباه پس از reconnectهای سالم با pending=0.
+2. Circuit false-positive در pending حدود 37 + سکون 20 ثانیه.
+3. تکرار GetParticipantRequest پس از NOT_SUPPORTED.
+4. تکرار SendMessageRequest در گروه‌های ChatWriteForbidden/ChannelPrivate.
+5. retry پس‌زمینه حذف هنگام باز بودن delete circuit/فشار transport.
+6. retry هر 60 ثانیه group-close در permission failure.
+
+مواردی که کد نمی‌تواند بدون دسترسی سروش حل کند:
+- ChatAdminRequired برای ban/default-rights وقتی اکانت واقعاً ادمین نیست.
+- ChatWriteForbidden/ChannelPrivate وقتی اکانت اجازه ارسال/دسترسی گروه ندارد.
+- Private 404 برای peerهایی که سرور دیگر Resolve نمی‌کند.
+
+Live verification لازم بعد از Deploy 96.31:
+- transport_pending و group_queue در حد پایین‌تر بمانند.
+- reconnectهای pending=0 باعث process restart نشوند.
+- تعداد GetParticipant NOT_SUPPORTED بعد از اولین مورد هر process به‌شدت کم شود.
+- گروه‌های inaccessible در یک بازه 5 دقیقه RPC ارسال تکراری نسازند.
+- Forward durable delete بعد از عادی‌شدن transport ادامه دهد.

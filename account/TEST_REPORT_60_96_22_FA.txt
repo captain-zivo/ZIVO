@@ -1,0 +1,20 @@
+ZIVO zivo60.96.22 TEST REPORT
+
+CHECK ZIVO60.96.22 FULL DIALOG INVENTORY: PASS
+- iter_dialogs(limit=None) full account scan: PASS
+- archived/all-dialog path has no fixed inventory cap: PASS
+- coordination PV durable requester sources: PASS
+- shared-claim group de-duplication: PASS
+- all-enabled-account scan request fan-out: PASS
+
+Regression checks re-run after 96.22 changes:
+- 96.18 Runtime Presence BASIC/FULL: PASS
+- 96.19 Admin/Special Recovery: PASS
+- 96.20 Economy/Gift Center: PASS
+- 96.21 Owner Full Cleanup: PASS
+- Command Core / Filter / Moderation / Private lane / Campaign / Transport: PASS
+- Market provider/concurrency/tools: PASS
+- Voice profiles: PASS
+- Python py_compile: PASS
+- Bash installer syntax: PASS
+- Installer transaction/rollback contract: PASS

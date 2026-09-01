@@ -1,0 +1,23 @@
+ZIVO zivo60.96.39.2 QA SUMMARY
+
+Broad source-tree regression runner:
+- check*.py inventory: 60
+- EXIT_PASS: 60
+- FAIL: 0
+- TIMEOUT: 0
+
+Installer/source inventory:
+- Full Source check*.py: 60
+- DEPLOY_FILES check*.py: 60
+- inventories equal: yes
+
+Critical regressions re-run after final patch:
+- 96.39.2 Installed QA Inventory: PASS
+- 96.39.2 Full Core Audit + Inventory: PASS
+- 96.39 Premium Purchase UX: PASS
+- 96.38 Premium/Payment Foundation: PASS
+- 96.34 Cleanup Reliability: PASS
+- Filter/Forward/Rate/Spam Fast Path: PASS
+
+Important scope note:
+These are offline/source-tree regression tests. Live Soroush behavior still requires deployment and real-account testing for network/API/permission conditions.

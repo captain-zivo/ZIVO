@@ -1,0 +1,3 @@
+ZIVO 96.53 + OFFICIAL22
+Meow Official-start Repair + DIAMOND/GOLD/SILVER/FREE Response Priority
+Full Source based on verified 96.52 + Official21. Official identities now sync on every private message/callback, nested forwarded-user envelopes are resolved, and stale numeric recipients are repaired only after an actual Official send proves reachability. Account routing, eager admission, overflow queues and the final SendMessage contention lane honor DIAMOND > GOLD > SILVER > FREE without artificial idle delays. Existing wallet, Zibal/card receipt, campaign, cleanup, group delivery, premium gates, multi-account IPC and transactional rollback behavior are preserved.

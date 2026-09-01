@@ -1,0 +1,19 @@
+[Unit]
+Description=ZIVO zivo60 Soroush Plus Manager
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/zivo60
+EnvironmentFile=-/etc/zivo60.env
+EnvironmentFile=-/etc/zivo60/accounts/main.env
+ExecStart=/opt/zivo60/venv/bin/python -O /opt/zivo60/zivo60.py
+Restart=always
+RestartSec=3
+TimeoutStopSec=20
+KillSignal=SIGTERM
+
+[Install]
+WantedBy=multi-user.target

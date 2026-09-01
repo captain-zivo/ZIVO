@@ -1,0 +1,24 @@
+ZIVO 60.96.24 TEST REPORT
+
+PASS:
+- Python py_compile
+- bash -n installer
+- 96.12 manual/scheduled cleanup regression
+- 96.13 through 96.24 relevant regression checks
+- 96.19 admin/special recovery
+- 96.20 economy/gifts
+- 96.21 owner full-cleanup entitlement
+- 96.22 unlimited full-dialog inventory
+- 96.23 private-priority/throttled inventory
+- 96.24 cleanup + all-private inventory dynamic check
+- Market provider/concurrency/tools
+- Voice profiles
+- Installer transaction
+
+96.24 dynamic proof:
+- preverified unpinned cleanup IDs call Delete RPC without a second resolve RPC
+- two normal private User dialogs are persisted from a synthetic full dialog scan
+- bot private dialog is excluded
+- coordination source is preserved
+
+Live Soroush behavior still depends on actual group delete permissions and session/API behavior.

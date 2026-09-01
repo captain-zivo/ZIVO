@@ -1,0 +1,26 @@
+ZIVO zivo60.96.39.4 QA SUMMARY
+
+LIVE ROOT CAUSE FIXED
+- sqlite3.OperationalError: no such column: order_code
+- Legacy 96.38 premium_orders schema migrated before any order_code index/query.
+
+DIRECT PASS
+- check_zivo60_96_39_4_premium_schema_migration.py
+- check_zivo60_96_38_premium_payment_foundation.py
+- check_zivo60_96_38_1_installer_hotfix.py
+- check_zivo60_96_39_purchase_ux.py
+- check_zivo60_96_39_1_full_core_audit.py
+- check_zivo60_96_39_2_installed_inventory.py
+- check_zivo60_96_39_3_startup_cutover.py
+- check_installer_transaction_96_11.py
+- check_filter_rate_91.py
+- check_zivo60_96_30_owner_welcome_spam_meow_guard.py
+- check_zivo60_96_31_live_transport_reliability.py
+- check_zivo60_96_33_profanity_guard_expansion.py
+- check_zivo60_96_34_cleanup_reliability.py
+- check_zivo60_96_37_forward_welcome_fastlane.py
+
+INVENTORY
+- 62 check*.py files declared and shipped.
+- Full one-process 62-test sweep exceeded the local execution time budget and is NOT claimed as a completed exit-code sweep.
+- 96.39.3 baseline had already passed its 61-test inventory; 96.39.4 changes are limited to Premium schema migration/version QA/installer wiring and were re-tested directly.

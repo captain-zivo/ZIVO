@@ -1,0 +1,12 @@
+CHECK ZIVO60.96.23 PRIVATE PRIORITY + THROTTLED FULL INVENTORY: PASS
+- unlimited iter_dialogs(limit=None) preserved
+- cross-process one-account inventory lock
+- page-level PM/command priority checkpoint
+- transport pending-pressure pause
+- confirmed 404 private target cooldown
+- 96.22 full inventory regression PASS
+- 96.21 owner cleanup regression PASS
+- 96.20 economy/gift regression PASS
+- 96.19 admin/special regression PASS
+- 96.18 runtime basic/full regression PASS
+- installer transaction PASS

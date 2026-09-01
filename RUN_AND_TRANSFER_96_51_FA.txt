@@ -1,0 +1,48 @@
+ZIVO 96.51 + OFFICIAL20 — انتقال، نصب و اجرا
+
+1) PowerShell ویندوز — ارسال ZIP
+
+scp "$env:USERPROFILE\Downloads\ZIVO_96_51_OFFICIAL20_CARD_BROADCAST_FULL_SOURCE.zip" root@176.65.151.226:/root/
+
+2) ورود به سرور
+
+ssh root@176.65.151.226
+
+3) استخراج، Verify و نصب/مهاجرت امن
+
+mkdir -p /opt/zivo-release-96-51
+unzip -o /root/ZIVO_96_51_OFFICIAL20_CARD_BROADCAST_FULL_SOURCE.zip -d /opt/zivo-release-96-51
+cd /opt/zivo-release-96-51/ZIVO_96_51_OFFICIAL20_CARD_BROADCAST_FULL_SOURCE
+python3 verify_release.py
+bash install_all.sh
+
+Installer قبل Cutover تست و Backup دیتابیس/Session/Env می‌گیرد، DBها را حفظ می‌کند و در خطا Rollback را اجرا می‌کند.
+
+4) ورود به Core و فعال‌سازی venv
+
+cd /opt/zivo60
+source venv/bin/activate
+python -c "import zivo60; print(zivo60.VERSION)"
+
+5) اجرای دائمی / ری‌استارت systemd
+
+systemctl restart zivo60.service
+systemctl restart zivo60@acc2.service
+systemctl restart zivo60@acc3.service
+systemctl restart zivo-official20.service
+
+6) وضعیت و لاگ
+
+systemctl status zivo60.service --no-pager -l
+systemctl status zivo60@acc2.service --no-pager -l
+systemctl status zivo60@acc3.service --no-pager -l
+systemctl status zivo-official20.service --no-pager -l
+journalctl -u zivo60.service -u zivo60@acc2.service -u zivo60@acc3.service -u zivo-official20.service -n 250 --no-pager
+journalctl -u zivo60.service -u zivo60@acc2.service -u zivo60@acc3.service -u zivo-official20.service -f
+
+Live QA ضروری بعد از نصب:
+
+- از پنل سروش: ادمین > تبلیغات > همه شبکه ZIVO > همه اکانت‌ها > گروه‌ها + پیوی.
+- از پنل تلگرام: تبلیغات > برای خودم > همه اکانت‌های فعال > همه گروه‌ها + همه پیوی‌ها.
+- خرید اشتراک گروه > کارت‌به‌کارت > پرداخت کردم > ارسال عکس رسید.
+- در لاگ Core باید campaign live dialog scan PASS و برای گروه‌های قدیمی campaign group rich-text fallback PASS دیده شود.

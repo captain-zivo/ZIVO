@@ -1,0 +1,3 @@
+Official12 -> Unix Socket /run/zivo-ipc/<account>.sock -> همان Process اکانت -> Join/Router واقعی ZIVO.
+Premium: Official12 -> /run/zivo-ipc/main.sock -> Premium Engine اصلی -> Zibal/Wallet/Subscription.
+SQLite بین Official و Account برای Join/Control وجود ندارد.

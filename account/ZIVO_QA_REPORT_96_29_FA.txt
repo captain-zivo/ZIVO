@@ -1,0 +1,27 @@
+ZIVO QA — zivo60.96.29
+================================================================
+روش: تست روی سورس واقعی، نه گزارش/فرض قبلی.
+قاعده PASS: Parser/Detection + Role/Route + Action + Verify + UX + Persistence در بخش قابل تست باید سالم باشد.
+
+بسته‌شده با تست آفلاین:
+[PASS] [P0] FWD-002 — حذف ناموفق فوروارد دیگر Enforcement کامل گزارش نمی‌شود؛ pending-delete پایدار + audit + retry ثبت می‌شود.
+[PASS] [P0] PET-002 — اسم ثبت‌شده پت Route واقعی دارد: نام خالی، «بیا»، «خوبی؟»، «چطوری؟»، «کجایی».
+[PASS] [P1] UX-PET-001 — متن اسم‌گذاری اکنون مثال واقعی صدا زدن پت را می‌دهد.
+
+Regression:
+[PASS] 47/47 check scripts
+[PASS] Python compile
+[PASS] installer shell syntax/transaction contract
+
+باز و نیازمند Live retest روی سرور:
+[P0] LIVE-DELETE-UNRESOLVED — باید بعد از deploy با journal جدید بررسی شود.
+[P0] LIVE-FWD-DELETE — باید با یک فوروارد واقعی و لاگ pending/verified بررسی شود.
+[P1] LIVE-CAMPAIGN-QUEUE — سورس 96.28 regression سالم است ولی وضعیت واقعی queue فقط با journal جدید قابل تأیید است.
+[P2] LIVE-ADMIN-REQUIRED — permission واقعی مقصدها لازم است.
+[P2] LIVE-PRIVATE-404 — peerهای واقعی/قدیمی سرور لازم است.
+[P2] LIVE-WRITE-FORBIDDEN — write permission واقعی مقصدها لازم است.
+[P2] UX-003 — پیام خیلی بلند هنوز به‌عنوان بهبود UX باز است.
+[P3] UX-002 — هدرهای انگلیسی هنوز به‌عنوان cleanup UX باز هستند.
+
+نتیجه:
+96.29 برای دو Root Cause قابل بازتولید Forward/Pet اصلاح و با regression آفلاین تأیید شده است؛ Live Soroush هنوز PASS اعلام نشده است.

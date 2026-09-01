@@ -1,0 +1,9 @@
+ZIVO 96.39.1 SOURCE PRESERVATION REPORT
+Baseline 96.39 files (excluding manifest): 279
+Release files before report/manifest: 281
+Missing baseline files: 0
+Added files:
+  + RELEASE_NOTES_96_39_1_FA.txt
+  + check_zivo60_96_39_1_full_core_audit.py
+Missing files:
+  none

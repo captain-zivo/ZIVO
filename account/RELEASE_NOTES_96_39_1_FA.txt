@@ -1,0 +1,12 @@
+ZIVO zivo60.96.39.1 — FULL CORE AUDIT HOTFIX
+
+رفع‌های اصلی:
+1) پاکسازی عددی: حذف readback اضافی بعد از Delete موفق؛ Verify فقط روی timeout/failure.
+2) فیلتر کلمه: ثبت اولین فیلتر، قفل پیام‌های فیلترشده را خودکار روشن می‌کند.
+3) اسپم: Fast input-chat قبل از full entity resolve؛ شکست moderation دیگر action lock یک‌ساعته جعلی باقی نمی‌گذارد.
+4) Fast Management Lane برای پاکسازی/فیلتر/اسپم تا get_chat کند/ناموفق فرمان را از کار نیندازد.
+5) Realtime Lock Enforcement: فیلتر کلمه/قفل‌ها و فیلتر محتوای دقیق دیگر برای حذف پیام وابسته به event.get_chat نیستند و اول از InputPeer سریع همان event استفاده می‌کنند.
+6) Installer: تست تاریخی profanity همان سقف 6s را حفظ می‌کند، ولی deploy با سقف server-realistic=20s اجرا می‌شود تا نوسان CPU rollback کاذب نسازد.
+7) Full QA: Installer اکنون تمام 59 فایل check*.py موجود در Full Source را اجرا می‌کند؛ هیچ تست موجودی بیرون Release Gate نمی‌ماند.
+
+هیچ Paywall جدیدی در این Hotfix اضافه نشده است.

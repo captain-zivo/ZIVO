@@ -1,0 +1,14 @@
+ZIVO zivo60.96.33 — TEST REPORT
+
+Verified working-tree state:
+- Python compile: PASS
+- install_zivo60.sh syntax: PASS
+- check_*.py: 51/51 PASS
+- check_zivo60_96_33_profanity_guard_expansion.py: PASS
+- unique profanity vocabulary: 396
+- Persian/Finglish/English severe/sexual abuse coverage: PASS
+- spacing/punctuation/emoji/stretching/diacritics/leetspeak bypass coverage: PASS
+- shared group-lock + speaker-learning detector: PASS
+- historical 96.30/96.31/96.32 regression checks: PASS
+
+Final ZIP fresh-extract verification is performed after packaging and must remain 51/51 PASS before release.

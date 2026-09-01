@@ -1,0 +1,6 @@
+ZIVO 60.96.50.2
+- حفظ کامل Fix پاکسازی 96.50.1 و Official19
+- سازگاری تابع delete_message_ids_in_batches با Regression تاریخی 96.34 بدون حذف یا دورزدن تست
+- مسیر Production همچنان await_late_delete_barrier واقعی را اجرا می‌کند
+- Historical isolated harness در نبود Helper مستقیماً Verification موجود را اجرا می‌کند
+- جلوگیری از Rollback Installer روی check_zivo60_96_34_cleanup_reliability.py

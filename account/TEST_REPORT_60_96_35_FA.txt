@@ -1,0 +1,16 @@
+TEST REPORT zivo60.96.35 — OWNER MULTIGROUP RECOVERY
+
+Verified on actual source before packaging:
+- owner=0 local placeholder + sibling account native-owner proof: PASS
+- temporary executive donor rejection: PASS
+- group-like/proxy entity filtered-admin creator fallback: PASS
+- owner=0 fake-card safety: PASS
+- legacy multi-account recovery: PASS
+- runtime presence/native role recovery: PASS
+- cleanup 96.34 regression: PASS
+- profanity 96.33 regression: PASS
+- complete check_*.py regression: 53/53 PASS, 0 FAIL
+- installer shell syntax: PASS
+
+Final ZIP is re-extracted and checksum/tests are verified separately before delivery.
+Live Soroush retest is still required for the exact problematic groups.

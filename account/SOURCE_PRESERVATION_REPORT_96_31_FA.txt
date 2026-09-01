@@ -1,0 +1,24 @@
+گزارش حفظ Full Source — ZIVO zivo60.96.31
+
+Baseline: ZIVO zivo60.96.30 Full Source
+Baseline files: 241
+Release files before SHA256 manifest: 245
+Missing baseline files: 0
+
+فایل حذف‌شده از مبنا:
+هیچ‌کدام
+
+فایل‌های جدید 96.31:
+RELEASE_NOTES_96_31_FA.txt
+TEST_REPORT_60_96_31_FA.txt
+ZIVO_LIVE_QA_96_31_FA.txt
+check_zivo60_96_31_live_transport_reliability.py
+
+فایل‌های تغییرکرده اصلی:
+- zivo60.py
+- install_zivo60.sh
+- README_ZIVO60_FA.txt
+- BUILD_INFO.txt
+
+نتیجه:
+Full Source مبنا حفظ شده و هیچ فایل baseline حذف نشده است.

@@ -1,0 +1,16 @@
+TEST REPORT zivo60.96.36
+
+Scope: Welcome end-to-end recovery on real 96.35 full source baseline.
+Verified locally:
+- direct raw MessageService join extraction
+- deep wrapped raw join extraction
+- generic joined/member_id action shape
+- sibling ZIVO account exclusion
+- router Welcome probe before rate/spam without direct action gate
+- get_chat failure fallback
+- private reply-to-service / public standalone delivery contract
+- failed send remains retryable (not marked delivered)
+- newest cross-account welcome settings reconciliation
+- test welcome command + Help registration
+
+Live Soroush join still requires deploy verification.

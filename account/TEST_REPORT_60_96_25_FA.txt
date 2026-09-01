@@ -1,0 +1,21 @@
+ZIVO 60.96.25 TEST REPORT
+
+PASS:
+- Python py_compile: zivo60.py, zivo_multi_account.py, zivo_social_games.py, zivo_admin_ux.py
+- bash -n install_zivo60.sh
+- VERIFY ZIVO60.91
+- COMMAND CORE 60.91
+- 96.12 through 96.25 relevant regression checks
+- market provider / concurrency / tools
+- voice profiles
+- installer transaction contract
+- 96.25 live all-dialog campaign static/dynamic check
+- campaign_target_claims SQLite cross-account dedupe test
+
+96.25 contract:
+- standard campaign source = client.iter_dialogs(limit=None)
+- no installations/private_contacts-only targeting in standard campaign runner
+- real group dialogs + real private User dialogs included
+- private can_broadcast=0 opt-out preserved
+- bot/deleted/self/system private dialogs excluded
+- cross-account duplicate group/private target claimed once per batch

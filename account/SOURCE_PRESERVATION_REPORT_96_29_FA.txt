@@ -1,0 +1,33 @@
+گزارش حفظ Full Source — ZIVO zivo60.96.29
+
+مبنای واقعی:
+ZIVO_zivo60_96_28_FULL_SOURCE_10MB_PLUS_QUEUE_FAIRNESS_ALL_GROUPS.zip
+
+وضعیت حفظ فایل‌ها:
+- فایل‌های نسخه مبنا: 231
+- فایل‌های جدید 96.29: 5
+- فایل‌های نهایی داخل Full Source: 236
+- فایل حذف‌شده از نسخه مبنا: 0
+- حجم خام درخت نهایی: حدود 10.96 MB
+
+فایل‌های موجود نسخه مبنا که واقعاً تغییر کرده‌اند:
+- BUILD_INFO.txt
+- install_zivo60.sh
+- zivo60.py
+- zivo_social_games.py
+- SHA256SUMS.txt (بازسازی کامل برای بسته نهایی)
+
+فایل‌های جدید 96.29:
+- RELEASE_NOTES_96_29_FA.txt
+- SOURCE_PRESERVATION_REPORT_96_29_FA.txt
+- TEST_REPORT_60_96_29_FA.txt
+- ZIVO_QA_REPORT_96_29_FA.txt
+- check_zivo60_96_29_behavioral_qa.py
+
+تغییر عملکردی محدود به:
+1) Forward lock: حذف تأییدنشده دیگر success محسوب نمی‌شود؛ pending-delete پایدار + retry + audit اضافه شده است.
+2) Pet: صدا زدن پت با اسم ثبت‌شده و عبارت‌های طبیعی Route می‌شود.
+3) Help/UX: نمونه‌های صدا زدن پت هم‌زمان داخل راهنمای سرگرمی ثبت شده‌اند.
+4) Installer/Test/Version metadata برای 96.29 به‌روزرسانی شده است.
+
+هیچ‌یک از 231 فایل نسخه مبنا از بسته Full Source حذف نشده‌اند.

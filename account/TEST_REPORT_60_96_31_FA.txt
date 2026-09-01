@@ -1,0 +1,21 @@
+ZIVO zivo60.96.31 — گزارش تست
+
+Current verified state:
+- py_compile zivo60.py: PASS
+- bash -n install_zivo60.sh: PASS
+- installer transaction checker: PASS
+- check_*.py total: 49
+- PASS: 49
+- FAIL: 0
+
+تست جدید:
+check_zivo60_96_31_live_transport_reliability.py
+- healthy reconnect storm no longer forces restart: PASS
+- pending=37/stagnant=20 false-positive circuit fixed: PASS
+- NOT_SUPPORTED participant RPC capability backoff: PASS
+- inaccessible group send backoff: PASS
+- durable delete pressure deferral: PASS
+- group-close permission backoff: PASS
+
+Live-only:
+نتیجه واقعی کاهش transport pressure فقط پس از Deploy روی سرور سروش قابل تأیید است.

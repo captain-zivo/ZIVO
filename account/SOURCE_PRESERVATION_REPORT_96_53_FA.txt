@@ -1,0 +1,32 @@
+گزارش حفظ کامل سورس — ZIVO 96.53 + OFFICIAL22
+================================================
+
+مبنای مقایسه:
+ZIVO_96_52_OFFICIAL21_WALLET_COMMERCE_FULL_SOURCE
+
+نتیجه مقایسه موجودی فایل‌ها:
+- سورس مبنا: 440 فایل، 18447914 بایت
+- سورس جدید: 449 فایل، 18823157 بایت
+- فایل حذف‌شده از مبنا: صفر
+- همه نسخه‌های تاریخی، تست‌ها، سرویس‌ها، نصب‌گرها، راهنماها و دارایی‌های نسخه 96.52 حفظ شده‌اند.
+
+فایل‌های سورسی/اجرایی جدید این نسخه:
+- RUN_AND_TRANSFER_96_53_FA.txt
+- account/RELEASE_NOTES_96_53_FA.txt
+- account/check_zivo60_96_53_tier_response_priority.py
+- official/RELEASE_NOTES_OFFICIAL22_FA.txt
+- official/test_zivo_official22.py
+- official/zivo-official22.service
+- official/zivo_official22.py
+- account/SOURCE_PRESERVATION_REPORT_96_53_FA.txt
+- account/TEST_REPORT_96_53_FA.txt
+
+توضیح اندازه بسته:
+ZIP نهایی با روش Store ساخته می‌شود تا خود فایل تحویلی نیز نزدیک به اندازه کامل سورس باشد؛
+بنابراین کوچک‌شدن ظاهری تا حدود 6MB که ناشی از فشرده‌سازی شدید بود تکرار نمی‌شود.
+
+کنترل انجام‌شده:
+- مقایسه مسیر نسبی تمام فایل‌های مبنا و نسخه جدید: PASS
+- تعداد فایل مفقود از نسخه مبنا: 0
+- بررسی SHA256 همه فایل‌های account، official و ریشه: PASS
+- آزمون سالم‌بودن و استخراج ZIP: PASS

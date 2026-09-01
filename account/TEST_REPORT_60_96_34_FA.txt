@@ -1,0 +1,26 @@
+ZIVO zivo60.96.34 — TEST REPORT
+
+Current verified state:
+- Source baseline: zivo60.96.33 full source
+- Version under test: zivo60.96.34
+
+Actual changes:
+- numeric cleanup batch retry/verify after timeout
+- retry only still-live message ids when verification is available
+- permission errors stop retry storms
+- bare «پاکسازی» and «پاکسازی پیام‌ها» default to 100 messages
+- immediate start acknowledgement before numeric cleanup
+- help registry updated with bare cleanup command
+
+Tests executed:
+- all check_*.py: 52/52 PASS, 0 FAIL
+- check_zivo60_96_34_cleanup_reliability.py: PASS
+- check_zivo60_96_12_repairs.py: PASS
+- check_zivo60_96_24_cleanup_private_inventory.py: PASS
+- check_zivo60_96_33_profanity_guard_expansion.py: PASS
+- py_compile zivo60.py: PASS
+- bash -n install_zivo60.sh: PASS
+
+Live-only remaining risk:
+- Soroush groups where the account genuinely lacks delete/admin permission cannot be forced to delete by code.
+- live transport behavior must be rechecked after deployment.

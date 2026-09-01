@@ -1,0 +1,12 @@
+ZIVO 60.96.27 TEST REPORT
+
+- Python compile: PASS
+- Raw exhaustive paginator static wiring: PASS
+- Synthetic 530-dialog pagination: PASS
+  * folder 0: 350 dialogs -> pages 100/100/100/50
+  * folder 1: 180 dialogs -> pages 100/80
+  * total unique: 530
+- Response object deliberately not DialogsSlice: PASS
+- Full Inventory uses raw exhaustive paginator: PASS
+- Campaign Live Scan uses raw exhaustive paginator: PASS
+- 96.22-96.26 regression compatibility: PASS

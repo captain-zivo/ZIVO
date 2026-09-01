@@ -1,0 +1,37 @@
+گزارش حفظ Full Source — ZIVO zivo60.96.30
+
+مبنای مستقیم:
+ZIVO_zivo60_96_29_FULL_SOURCE_10MB_BEHAVIORAL_QA_FORWARD_PET_DURABLE_FIXED.zip
+
+وضعیت حفظ فایل‌ها پیش از بسته‌بندی:
+- فایل‌های نسخه مبنا: 236
+- فایل‌های گمشده از نسخه مبنا: 0
+- فایل‌های جدید 96.30: 5
+- فایل‌های نهایی Full Source: 241
+- فایل‌های __pycache__ مبنا byte-for-byte از بسته مبنا حفظ شده‌اند؛ bytecode جدید تست 96.30 داخل Release نگه داشته نشده است.
+
+فایل‌های موجود نسخه 96.29 که عمداً تغییر کرده‌اند:
+- zivo60.py
+- zivo_social_games.py
+- check_filter_rate_91.py (قرارداد ترتیب Router مطابق اصلاح Flood Guard)
+- install_zivo60.sh
+- BUILD_INFO.txt
+- README_ZIVO60_FA.txt
+- SHA256SUMS.txt (در انتهای Release بازسازی می‌شود)
+
+فایل‌های جدید 96.30:
+- check_zivo60_96_30_owner_welcome_spam_meow_guard.py
+- RELEASE_NOTES_96_30_FA.txt
+- SOURCE_PRESERVATION_REPORT_96_30_FA.txt
+- TEST_REPORT_60_96_30_FA.txt
+- ZIVO_QA_REPORT_96_30_FA.txt
+
+تغییرات رفتاری اصلی:
+1) Welcome Raw fallback + private/public routing + حذف participant scan از hot path.
+2) Flood Guard قبل از anti-spam shield + حذف duplicate hot-path work در حالت عادی.
+3) Owner identity session/durable fallback به‌جای «ثبت نشده» عمومی.
+4) Multi-account duplicate-group UX با account/self/requester و آورنده ثبت‌شده نصب؛ provenance جدید داخل installations ذخیره می‌شود.
+5) Meow aliases شامل میوی کشیده، میو هاپ و زوزه با cooldown مشترک.
+6) Shared profanity detector for group lock + speaker learning, with sexual-content and common evasion handling.
+7) Forward/Pet اصلاح‌شده 96.29 بدون حذف حفظ شده‌اند.
+8) رفتارهای جدید هم‌زمان در Help/feature registry ثبت شده‌اند.

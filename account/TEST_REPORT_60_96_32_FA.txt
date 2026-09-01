@@ -1,0 +1,22 @@
+ZIVO zivo60.96.32 — گزارش تست
+
+Current verified state:
+- py_compile zivo60.py: PASS
+- bash -n install_zivo60.sh: PASS
+- check_zivo60_96_32_owner_zero_recovery.py: PASS
+- Regression check_*.py: 50/50 PASS, 0 FAIL
+
+Behavioral owner tests:
+- owner=0 + proven native metadata -> durable repair: PASS
+- owner=0 + live creator -> durable repair: PASS
+- owner=0 never reaches fake owner card: PASS
+
+Prior owner/UX/transport regressions:
+- check_zivo60_96_30_owner_welcome_spam_meow_guard.py: PASS
+- check_zivo60_96_31_live_transport_reliability.py: PASS
+- check_zivo60_96_21_owner_full_cleanup.py: PASS
+
+Live validation still required after deploy:
+- real group 23086873 or another owner=0 legacy/bootstrap group should log
+  "owner zero placeholder repaired" and then "owner card sent" with owner>0.
+- profile photo requires Soroush to expose/resolvable access_hash/profile photo.

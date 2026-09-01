@@ -1,0 +1,35 @@
+ZIVO zivo60.96.31
+
+این نسخه از روی شواهد واقعی journalctl نسخه 96.30 ساخته شد.
+
+اصلاحات:
+1) Transport reconnect
+- reconnectهای متعدد با pending سالم دیگر به‌تنهایی باعث kill/restart فرایند نمی‌شوند.
+- restart فقط وقتی reconnect storm همراه فشار واقعی transport باشد یا pending به آستانه circuit برسد.
+
+2) Transport health false-positive
+- حالت Live مشاهده‌شده pending=37 + stagnant=20s دیگر circuit نمی‌زند.
+- circuit سکون فقط از pending حداقل 64 و سکون حداقل 30 ثانیه فعال می‌شود.
+- آستانه‌های circuit/immediate قبلی حفظ شده‌اند.
+
+3) GetParticipantRequest NOT_SUPPORTED
+- بعد از اولین NOT_SUPPORTED روی هر process/account، direct participant probe به مدت پیش‌فرض 30 دقیقه suspend می‌شود.
+- مسیر native admin-list fallback حفظ شده است.
+
+4) Group no-write/private backoff
+- ChatWriteForbidden / ChannelPrivate به مدت 5 دقیقه در RAM ثبت می‌شود.
+- پاسخ‌ها/mentionهای بعدی همان گروه در این بازه RPC تکراری بی‌فایده ایجاد نمی‌کنند.
+- محدودیت plain-text formatting با no-write اشتباه گرفته نمی‌شود.
+
+5) Durable delete retry
+- هنگام باز بودن live-delete circuit یا transport pending >= warning، worker پس‌زمینه صبر می‌کند.
+- Jobهای SQLite حذف نمی‌شوند و بعد از عادی‌شدن transport ادامه پیدا می‌کنند.
+
+6) Group close repair
+- خطای permission در repair پس‌زمینه به‌جای retry هر 60 ثانیه، 10 دقیقه backoff می‌گیرد.
+- فرمان دستی کاربر همچنان مسیر خودش را دارد.
+
+7) Shutdown hygiene
+- در transport health circuit، aiohttp/websocket cache بلافاصله بعد از disconnect بسته می‌شود.
+
+این نسخه قابلیت کاربری جدید اضافه نمی‌کند؛ بنابراین راهنمای فرمان‌ها تغییر عملکردی ندارد.

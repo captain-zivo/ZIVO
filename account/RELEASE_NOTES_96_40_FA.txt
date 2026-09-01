@@ -1,0 +1,13 @@
+ZIVO 60.96.40 — Official Control Bridge
+
+- پیوی اکانت‌های main/acc2/acc3 در حالت پیش‌فرض OFFICIAL_CONTROL_ONLY غیرفعال است؛ مسیرهای Group/Join دست‌نخورده می‌مانند.
+- Remote Command Bus روی SQLite مشترک اضافه شد تا بات رسمی فرمان‌ها را به همان Group Router اصلی ZIVO تحویل دهد؛ منطق قابلیت‌ها دوباره‌نویسی نشده است.
+- انتخاب اکانت برای Join توسط کاربر از پنل رسمی انجام می‌شود و requester_user_id تا فعال‌سازی گروه حفظ می‌شود.
+- کنترل از بات رسمی فقط برای مالک/ادمین واقعی گروه یا مالک سراسری مجاز است.
+- هدف‌گیری فرمان‌های ریپلای‌محور با user_id یا message_id پشتیبانی می‌شود.
+- اولین فرمان پس از Join در بازه کوتاه فعال‌سازی تا 45 ثانیه requeue می‌شود و بی‌دلیل GROUP_NOT_ACTIVE نمی‌گیرد.
+- پاکسازی Flood/Spam از مسیر realtime جدا شد: Ban/تشخیص منتظر پاکسازی تاریخچه نمی‌ماند؛ حذف شناسه‌های زنده و history cleanup در پس‌زمینه انجام می‌شود.
+- batch پاکسازی Flood پیش‌فرض 50 و history scan cap پیش‌فرض 1200 است؛ Delete governor/FloodWait safety کاهش داده نشده است.
+- Workerهای پیوی و recovery خصوصی در OFFICIAL_CONTROL_ONLY شروع نمی‌شوند تا RPC/CPU آزاد شود.
+
+Live-only: اجرای واقعی Join، native-admin verification، moderation permissions و پاکسازی انبوه روی سرور سروش باید بعد از Cutover تأیید شود.

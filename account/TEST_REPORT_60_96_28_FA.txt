@@ -1,0 +1,9 @@
+TEST REPORT zivo60.96.28
+- py_compile core/multi-account: PASS
+- 96.18..96.28 campaign/runtime regressions: PASS
+- priority transport compatibility: PASS
+- stale standard queue supersede: PASS
+- newest-job claim priority: PASS
+- bounded foreground fairness: PASS
+- raw synthetic 530-dialog pagination: PASS
+- installed-copy deployment simulation: PASS

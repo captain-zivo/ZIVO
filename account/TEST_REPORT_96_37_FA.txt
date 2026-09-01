@@ -1,0 +1,22 @@
+ZIVO zivo60.96.37 TEST REPORT
+=============================
+
+Verified on modified source:
+- Python compile: PASS
+- installer bash syntax: PASS
+- installer transaction contract: PASS
+- check_delete_governor_96.py: PASS
+- check_priority_transport_96.py: PASS
+- check_zivo60_96_29_behavioral_qa.py: PASS
+- check_zivo60_96_30_owner_welcome_spam_meow_guard.py: PASS
+- check_zivo60_96_31_live_transport_reliability.py: PASS
+- check_zivo60_96_33_profanity_guard_expansion.py: PASS (server-noise-safe 6s ceiling; observed ~4.8-4.9s here)
+- check_zivo60_96_34_cleanup_reliability.py: PASS
+- check_zivo60_96_35_owner_multigroup_recovery.py: PASS
+- check_zivo60_96_36_welcome_end_to_end.py: PASS
+- check_zivo60_96_37_forward_welcome_fastlane.py: PASS
+- additional command/private/moderation/legacy regression checks executed: PASS
+
+Not claimed:
+- Full 55/55 suite was not completed in one wall-clock run in this environment because several AST-heavy historical checks take ~20s each. No unexecuted test is reported as PASS.
+- Live Soroush Forward latency / Welcome event reception requires deployment.

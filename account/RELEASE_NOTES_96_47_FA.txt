@@ -1,0 +1,7 @@
+ZIVO zivo60.96.47
+
+- Official Admin IPC برای آمار مخاطبان، Full Dialog Inventory و ساخت/پیگیری Campaign پیوی.
+- ارسال Campaign روی main/acc2/acc3 از Live Dialog Scan بدون سقف ثابت استفاده می‌کند و Duplicate/Bot/Deleted/Opt-out را حذف می‌کند.
+- official_private_users دارای broadcast_enabled پایدار شد.
+- started_at اشتراک به IPC وضعیت اضافه شد تا نوار واقعی روز/درصد اشتراک محاسبه شود.
+- قابلیت‌های Premium و Direct IPC نسخه 96.46 حفظ شده‌اند.

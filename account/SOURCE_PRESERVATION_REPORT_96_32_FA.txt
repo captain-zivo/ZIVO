@@ -1,0 +1,11 @@
+گزارش حفظ Full Source — ZIVO zivo60.96.32
+
+مبنای کامل 96.31 (بدون manifest): 245 فایل
+نسخه 96.32 (بدون manifest): 249 فایل
+فایل حذف‌شده از مبنا: 0
+فایل‌های جدید اصلی:
+- RELEASE_NOTES_96_32_FA.txt
+- SOURCE_PRESERVATION_REPORT_96_32_FA.txt
+- TEST_REPORT_60_96_32_FA.txt
+- check_zivo60_96_32_owner_zero_recovery.py
+توضیح: cacheهای موجود در بسته مبنا برای حفظ کامل payload آرشیو نگه داشته شده‌اند؛ installer فقط DEPLOY_FILES را نصب می‌کند.

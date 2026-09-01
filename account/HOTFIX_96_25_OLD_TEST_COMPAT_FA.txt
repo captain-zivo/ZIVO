@@ -1,0 +1,7 @@
+ZIVO zivo60.96.25 - Hotfix regression test compatibility
+
+- Runtime/campaign logic is unchanged.
+- check_zivo60_96_22_full_dialog_inventory.py no longer requires the obsolete exact UI label «پیوی هماهنگی».
+- The test now accepts the broadened 96.25 UI wording «همه پیوی‌های واقعی» while still verifying coordination-private discovery functions and durable sources.
+- This fixes the pre-cutover AssertionError seen on the server before any live files were mutated.
+- Installed-copy simulation with the exact 32 DEPLOY_FILES: PASS for 96.22/96.23/96.24/96.25 checks.
